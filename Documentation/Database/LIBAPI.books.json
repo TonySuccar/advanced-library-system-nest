@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "678d5f4ea04a01daa9f28d94"
+  },
+  "title": {
+    "en": "My Book",
+    "ar": "عنوان الكتاب"
+  },
+  "isbn": "ISBN 978-0-596-520068-7",
+  "genre": "Fiction",
+  "description": {
+    "en": "A great book",
+    "ar": "كتاب عظيم"
+  },
+  "isOpenToReviews": true,
+  "minAge": 18,
+  "authorId": {
+    "$oid": "678d14ea6c6c0c649a789a82"
+  },
+  "coverImageUrl": "/uploads/cover-images/1737317469517-tquebo17l5l.png",
+  "publishedDate": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  },
+  "pdfLink": "/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf",
+  "createdAt": {
+    "$date": "2025-01-19T20:23:42.742Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-19T20:23:42.742Z"
+  },
+  "__v": 0
+}]

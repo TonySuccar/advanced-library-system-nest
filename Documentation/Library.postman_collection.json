@@ -1,0 +1,3011 @@
+{
+	"info": {
+		"_postman_id": "d38ff3c0-8f6e-4691-a605-b03032365f58",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40260727"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"user@example.com\",\n  \"name\":\"tony\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/auth/user/signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"user@example.com\",\n  \"name\":\"tony\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-LMoLOPwPAi0ny3UjP1UeDLB9T8Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 15:32:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OTP sent to your email.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "comfirm-user-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"otp\": \"725180\",\n    \"password\": \"12345678910t\",\n    \"age\": 13\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/confirm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"confirm"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "comfirm-user-otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"user@example.com\",\n    \"otp\": \"589171\",\n    \"password\": \"12345678910t\",\n    \"age\": 13\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/confirm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"confirm"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "153"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"99-4nnZehONR5lGzjaYitEzSVioC1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 15:43:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OTP verified successfully, user created.\",\n    \"user\": {\n        \"name\": \"tony\",\n        \"memberId\": \"MEM174029\",\n        \"email\": \"user@example.com\",\n        \"returnRate\": 100,\n        \"age\": 13\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CMS-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@admin.com\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/CMS/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"CMS",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CMS-login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"admin@admin.com\",\n    \"password\":\"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/CMS/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"CMS",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "324"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"144-5eAzoJ22yrqrkuTJeR7uu0NCfOM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 00:06:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI0NTE2MywiZXhwIjoxNzM3MjQ4NzYzfQ.BfPPjDa-b-VQpx8UX8PUusPoDU9kOVnsdAuuWFcN07M\",\n    \"user\": {\n        \"email\": \"admin@admin.com\",\n        \"role\": \"admin\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "user-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"12345678910t\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user-login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"12345678910t\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "351"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15f-L1mltHcYe8UkH35sFj+USDabRHo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Jan 2025 16:03:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MjE2MjMyLCJleHAiOjE3MzcyMTk4MzJ9.KiJyaQHnW2VNlmWOVo9EOp4YGNFosnODFfKqQiBeg3Q\",\n    \"user\": {\n        \"memberId\": \"MEM174029\",\n        \"email\": \"user@example.com\",\n        \"role\": \"member\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Author-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"johndoe@example.com\",\n\"password\":\"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/author/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"author",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\":\"johndoe@example.com\",\n\"password\":\"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/author/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"author",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "335"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14f-DuUBmixlsujAiipcn9KuVHgN1YI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 12:53:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhjZWVhMGYxZjgwYTY3N2FkMTAwMDciLCJlbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzM3MjkxMjAyLCJleHAiOjE3MzcyOTQ4MDJ9.WUbguf8-Wx4flzX6RZgdNm2To_gtb51z6U_X3xs3eWc\",\n    \"user\": {\n        \"email\": \"johndoe@example.com\",\n        \"role\": \"author\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CMS",
+			"item": [
+				{
+					"name": "Create-cms-user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJjbXMiLCJpYXQiOjE3MzcyNDM1MjEsImV4cCI6MTczNzI0NzEyMX0.fbBJCBfbkzqiR2VWfGCh-HABpq8PaYH81T0MycwRSc4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"tony@succar.com\",\n    \"name\":\"tony\",\n    \"password\": \"password12345\",\n    \"role\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cms/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cms-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"tony@succar.com\",\n    \"name\":\"tony\",\n    \"password\": \"password12345\",\n    \"role\":\"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cms/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-PPt3n36xzYRclAH5276gbJT2Liw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 12:26:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"tony@succar.com\",\n    \"password\": \"$2a$10$iRkRSfXSwUQzpt9RiaFLh.4K7Nzjuxy.a6ym4kdfjmjtTWJQgkfK.\",\n    \"name\": \"tony\",\n    \"role\": \"admin\",\n    \"_id\": \"678cef72b2a24fb8aa534b86\",\n    \"createdAt\": \"2025-01-19T12:26:28.203Z\",\n    \"updatedAt\": \"2025-01-19T12:26:28.203Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "inter-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"tonyy@succar.com\",\n    \"name\":\"tony\",\n    \"password\": \"password12345\",\n    \"role\":\"intern\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cms/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-9jJC+QDBD0HnN5sEE53iXQUZ/bE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 01:12:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"tonyy@succar.com\",\n    \"password\": \"$2a$10$tWBQBMhltOL9AB4gaSWDJOp5PmYiWjYlwGRdTA6/apnPjGwGkpm5e\",\n    \"name\": \"tony\",\n    \"role\": \"intern\",\n    \"_id\": \"678da2f2f7a8d575ab05d1ee\",\n    \"createdAt\": \"2025-01-20T01:12:20.992Z\",\n    \"updatedAt\": \"2025-01-20T01:12:20.992Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Create-author-user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI4NDk4NSwiZXhwIjoxNzM3Mjg4NTg1fQ.1KCmgjWhOrOEINjsHqmRwu4K9Mew0G1m2aWM_b8YxRk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name.en",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "name.ar",
+									"value": "جون دو",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "johndoe@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password12345678910",
+									"type": "text"
+								},
+								{
+									"key": "biography",
+									"value": "John is an author from the US.",
+									"type": "text"
+								},
+								{
+									"key": "biography.ar",
+									"value": "جون كاتب من الولايات المتحدة.",
+									"type": "text"
+								},
+								{
+									"key": "birthDate",
+									"value": "1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/Users/succar/Desktop/greategatsby.JPEG"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/cms/create-author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"create-author"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name[en]",
+											"value": "John Doe",
+											"type": "text"
+										},
+										{
+											"key": "name[ar]",
+											"value": "جون دو",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "johndoe@example.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin123",
+											"type": "text"
+										},
+										{
+											"key": "biography[en]",
+											"value": "\tJohn is an accomplished author from the US.",
+											"type": "text"
+										},
+										{
+											"key": "biography[ar]",
+											"value": "جون كاتب بارع من الولايات المتحدة.",
+											"type": "text"
+										},
+										{
+											"key": "birthDate",
+											"value": "1990-01-01",
+											"type": "text"
+										},
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": "/Users/succar/Desktop/greategatsby.JPEG"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cms/create-author",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"create-author"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "590"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24e-J/b65XnpF5MtXo5awkDbP3f7y9A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 12:20:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": {\n        \"en\": \"John Doe\",\n        \"ar\": \"جون دو\"\n    },\n    \"email\": \"johndoe@example.com\",\n    \"password\": \"$2a$10$WBh.ACznIxZYkZLXyREqn.Y48QYa.OqhohsZEp/AUievSu9FedAg.\",\n    \"biography\": {\n        \"en\": \"\\tJohn is an accomplished author from the US.\",\n        \"ar\": \"جون كاتب بارع من الولايات المتحدة.\"\n    },\n    \"profileImageUrl\": \"/uploads/profile-images/0a9267d5-c6e3-4599-94a2-8b0029795348.JPEG\",\n    \"birthDate\": \"1990-01-01T00:00:00.000Z\",\n    \"role\": \"author\",\n    \"bookRequestIds\": [],\n    \"averageApprovalTime\": 0,\n    \"_id\": \"678cee0285b27f621396b9b4\",\n    \"createdAt\": \"2025-01-19T12:20:18.482Z\",\n    \"updatedAt\": \"2025-01-19T12:20:18.482Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Change-author-pass",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI4OTU1NiwiZXhwIjoxNzM3MjkzMTU2fQ.51DB2RESlY-g9t-nblZT2TmhJB8-Ngc2PMy77Mp8vac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"johndoe@example.com\",\n\"password\":\"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cms/change-author-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"change-author-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "johndoe@example.com",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "newpassword123",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change-author-pass",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\":\"johndoe@example.com\",\n\"password\":\"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cms/change-author-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"change-author-password"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "johndoe@example.com",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "newpassword123",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-me9t9USMfy80kyklS6j7xeBCK5I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 12:44:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password updated successfully.\",\n    \"author\": {\n        \"email\": \"johndoe@example.com\",\n        \"name\": {\n            \"en\": \"John Doe\",\n            \"ar\": \"جون دو\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GETALL-requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMwOTA0MiwiZXhwIjoxNzM3MzEyNjQyfQ.vdVKBSYdeBEtpE0f-SjUd0Z_tU7dcBDKFKLCsdlMWm8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cms/book-requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"book-requests"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/cms/book-requests",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"book-requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "674"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a2-VAIy3WFS4uly2jcmjWpTPZgEYk0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 17:51:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 1,\n    \"page\": 1,\n    \"limit\": 10,\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"_id\": \"678d3b286afeb1fd7882f434\",\n            \"authorId\": \"678d14ea6c6c0c649a789a82\",\n            \"title\": {\n                \"en\": \"My Book\",\n                \"ar\": \"عنوان الكتاب\"\n            },\n            \"isbn\": \"ISBN 978-0-596-520068-7\",\n            \"genre\": \"Fiction\",\n            \"description\": {\n                \"en\": \"A great book.\",\n                \"ar\": \"كتاب عظيم\"\n            },\n            \"isOpenToReviews\": false,\n            \"minAge\": 18,\n            \"coverImageUrl\": \"/uploads/cover-images/1737308968106-y047yhlcs9.JPEG\",\n            \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n            \"pdfLink\": \"/uploads/book-pdfs/1737308968107-0k7zurq6e1xs.pdf\",\n            \"status\": \"pending\",\n            \"responseTime\": null,\n            \"requestTime\": \"2025-01-19T17:49:28.285Z\",\n            \"createdAt\": \"2025-01-19T17:49:28.293Z\",\n            \"updatedAt\": \"2025-01-19T17:49:28.293Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Acccept-book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMwOTA0MiwiZXhwIjoxNzM3MzEyNjQyfQ.vdVKBSYdeBEtpE0f-SjUd0Z_tU7dcBDKFKLCsdlMWm8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cms/requests/678d3b286afeb1fd7882f434/accept",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"requests",
+								"678d3b286afeb1fd7882f434",
+								"accept"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Acccept-book",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/cms/requests/678d5c5d07bebad06b490643/accept",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"requests",
+										"678d5c5d07bebad06b490643",
+										"accept"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1345"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"541-cFHWkAQ1x9QwYPsUsgZLEd4ZFpI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 20:23:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Book request accepted successfully.\",\n    \"bookRequest\": {\n        \"_id\": \"678d5c5d07bebad06b490643\",\n        \"authorId\": \"678d14ea6c6c0c649a789a82\",\n        \"title\": {\n            \"en\": \"My Book\",\n            \"ar\": \"عنوان الكتاب\"\n        },\n        \"isbn\": \"ISBN 978-0-596-520068-7\",\n        \"genre\": \"Fiction\",\n        \"description\": {\n            \"en\": \"A great book\",\n            \"ar\": \"كتاب عظيم\"\n        },\n        \"isOpenToReviews\": false,\n        \"minAge\": 18,\n        \"coverImageUrl\": \"/uploads/cover-images/1737317469517-tquebo17l5l.png\",\n        \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n        \"pdfLink\": \"/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf\",\n        \"status\": \"accepted\",\n        \"responseTime\": \"2025-01-19T20:23:42.575Z\",\n        \"requestTime\": \"2025-01-19T20:11:09.681Z\",\n        \"createdAt\": \"2025-01-19T20:11:09.682Z\",\n        \"updatedAt\": \"2025-01-19T20:23:42.575Z\",\n        \"__v\": 0,\n        \"approvalTime\": 752.894\n    },\n    \"book\": {\n        \"title\": {\n            \"en\": \"My Book\",\n            \"ar\": \"عنوان الكتاب\"\n        },\n        \"isbn\": \"ISBN 978-0-596-520068-7\",\n        \"genre\": \"Fiction\",\n        \"description\": {\n            \"en\": \"A great book\",\n            \"ar\": \"كتاب عظيم\"\n        },\n        \"isOpenToReviews\": false,\n        \"minAge\": 18,\n        \"authorId\": \"678d14ea6c6c0c649a789a82\",\n        \"coverImageUrl\": \"/uploads/cover-images/1737317469517-tquebo17l5l.png\",\n        \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n        \"pdfLink\": \"/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf\",\n        \"_id\": \"678d5f4ea04a01daa9f28d94\",\n        \"createdAt\": \"2025-01-19T20:23:42.742Z\",\n        \"updatedAt\": \"2025-01-19T20:23:42.742Z\",\n        \"__v\": 0\n    },\n    \"author\": {\n        \"id\": \"678d14ea6c6c0c649a789a82\",\n        \"averageApprovalTime\": 752.894\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Reject-Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMxODEzMCwiZXhwIjoxNzM3MzIxNzMwfQ.M6MFZgf_4Tid_pSRuaA7d3fle2GHFhMyIdQ9Efj6lTc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cms/requests/678d5e100ad00821d0e6a14d/reject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"requests",
+								"678d5e100ad00821d0e6a14d",
+								"reject"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/cms/requests/678d5e100ad00821d0e6a14d/reject",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"requests",
+										"678d5e100ad00821d0e6a14d",
+										"reject"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "634"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27a-iYQxY3dKef8f+U7z8TKF6AVRYVA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 20:34:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678d5e100ad00821d0e6a14d\",\n    \"authorId\": \"678d14ea6c6c0c649a789a82\",\n    \"title\": {\n        \"en\": \"My Book2\",\n        \"ar\": \"عنوان الكتا\"\n    },\n    \"isbn\": \"ISBN 978-0-596-528768-7\",\n    \"genre\": \"Action\",\n    \"description\": {\n        \"en\": \"A great boo\",\n        \"ar\": \"كتاب عظي\"\n    },\n    \"isOpenToReviews\": false,\n    \"minAge\": 18,\n    \"coverImageUrl\": \"/uploads/cover-images/1737317904452-c09m31tmfs6.png\",\n    \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n    \"pdfLink\": \"/uploads/book-pdfs/1737317904453-4tyvbfg1sit.pdf\",\n    \"status\": \"rejected\",\n    \"responseTime\": \"2025-01-19T20:34:16.516Z\",\n    \"requestTime\": \"2025-01-19T20:18:24.620Z\",\n    \"createdAt\": \"2025-01-19T20:18:24.621Z\",\n    \"updatedAt\": \"2025-01-19T20:34:16.520Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Distribute-books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMxODEzMCwiZXhwIjoxNzM3MzIxNzMwfQ.M6MFZgf_4Tid_pSRuaA7d3fle2GHFhMyIdQ9Efj6lTc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"branchId\": \"678d0514980c7f6642a83ca7\",\n  \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n  \"totalCopies\": 20\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cms/distribute-books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cms",
+								"distribute-books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchId\": \"678d0514980c7f6642a83ca7\",\n  \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n  \"totalCopies\": 20\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cms/distribute-books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cms",
+										"distribute-books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fa-U60fTOyZx2dXZhAi4R1xTdBBbSU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 20:56:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"branchId\": \"678d0514980c7f6642a83ca7\",\n    \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n    \"totalCopies\": 20,\n    \"borrowableDays\": 7,\n    \"availableCopies\": 0,\n    \"_id\": \"678d6715eb1ee8b7398572f3\",\n    \"createdAt\": \"2025-01-19T20:56:53.459Z\",\n    \"updatedAt\": \"2025-01-19T20:56:53.459Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Branch",
+			"item": [
+				{
+					"name": "Add-branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"branchName\": \"second Library\",\n  \"location\": \"country\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/branch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"branch"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add-branch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchName\": \"second Library\",\n  \"location\": \"country\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/branch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"branch"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-MTWGzWl9oPKkKgGPZ6UMAzdMUa8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 13:58:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"branchName\": \"second Library\",\n    \"location\": \"country\",\n    \"_id\": \"678d0514980c7f6642a83ca7\",\n    \"createdAt\": \"2025-01-19T13:58:44.605Z\",\n    \"updatedAt\": \"2025-01-19T13:58:44.605Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get-Branch-Byid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"branch",
+								"678cff11980c7f6642a83ca3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"branch",
+										"678cff11980c7f6642a83ca3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-pRYFJL9xFLf7MkUGbkGiIZrN3vg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 14:01:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678cff11980c7f6642a83ca3\",\n    \"branchName\": \"Central Library\",\n    \"location\": \"Downtown\",\n    \"createdAt\": \"2025-01-19T13:33:05.388Z\",\n    \"updatedAt\": \"2025-01-19T13:33:05.388Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Getall-branches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/branch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"branch"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Getall-branches",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/branch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"branch"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "347"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15b-LCHa6CXumV94DsJ2RJac5QHxL+s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 14:00:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"678cff11980c7f6642a83ca3\",\n        \"branchName\": \"Central Library\",\n        \"location\": \"Downtown\",\n        \"createdAt\": \"2025-01-19T13:33:05.388Z\",\n        \"updatedAt\": \"2025-01-19T13:33:05.388Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"678d0514980c7f6642a83ca7\",\n        \"branchName\": \"second Library\",\n        \"location\": \"country\",\n        \"createdAt\": \"2025-01-19T13:58:44.605Z\",\n        \"updatedAt\": \"2025-01-19T13:58:44.605Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update-branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"branchName\": \"Updated Library Name\",\n  \"location\": \"Updated Location\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"branch",
+								"678cff11980c7f6642a83ca3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchName\": \"Updated Library Name\",\n  \"location\": \"Updated Location\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"branch",
+										"678cff11980c7f6642a83ca3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "186"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ba-eb4gjtj9fSqVLr0I4iS45eLTTYI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 14:03:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678cff11980c7f6642a83ca3\",\n    \"branchName\": \"Updated Library Name\",\n    \"location\": \"Updated Location\",\n    \"createdAt\": \"2025-01-19T13:33:05.388Z\",\n    \"updatedAt\": \"2025-01-19T14:03:26.213Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete-Branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"branch",
+								"678cff11980c7f6642a83ca3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"branch",
+										"678cff11980c7f6642a83ca3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-OIz1dCVneg7Pj3JcAoir9N9QUjs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 14:04:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Branch deleted successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Book-request",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title[en]",
+											"value": "My Book",
+											"type": "text"
+										},
+										{
+											"key": "title[ar]",
+											"value": "عنوان الكتاب",
+											"type": "text"
+										},
+										{
+											"key": "isbn",
+											"value": "ISBN 978-0-596-520068-7",
+											"type": "text"
+										},
+										{
+											"key": "genre",
+											"value": "Fiction",
+											"type": "text"
+										},
+										{
+											"key": "description[en]",
+											"value": "A great book.",
+											"type": "text"
+										},
+										{
+											"key": "description[ar]",
+											"value": "كتاب عظيم",
+											"type": "text"
+										},
+										{
+											"key": "isOpenToReviews",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "minAge",
+											"value": "18",
+											"type": "text"
+										},
+										{
+											"key": "publishedDate",
+											"value": "2025-01-01",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/succar/Desktop/greategatsby.JPEG"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/succar/Desktop/dummy-pdf_2.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/author/request-book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"author",
+										"request-book"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "618"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26a-pxQ/RUjTiy3W6PGFbX4Zcp9fOy0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 17:49:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"authorId\": \"678d14ea6c6c0c649a789a82\",\n    \"title\": {\n        \"en\": \"My Book\",\n        \"ar\": \"عنوان الكتاب\"\n    },\n    \"isbn\": \"ISBN 978-0-596-520068-7\",\n    \"genre\": \"Fiction\",\n    \"description\": {\n        \"en\": \"A great book.\",\n        \"ar\": \"كتاب عظيم\"\n    },\n    \"isOpenToReviews\": false,\n    \"minAge\": 18,\n    \"coverImageUrl\": \"/uploads/cover-images/1737308968106-y047yhlcs9.JPEG\",\n    \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n    \"pdfLink\": \"/uploads/book-pdfs/1737308968107-0k7zurq6e1xs.pdf\",\n    \"status\": \"pending\",\n    \"responseTime\": null,\n    \"requestTime\": \"2025-01-19T17:49:28.285Z\",\n    \"_id\": \"678d3b286afeb1fd7882f434\",\n    \"createdAt\": \"2025-01-19T17:49:28.293Z\",\n    \"updatedAt\": \"2025-01-19T17:49:28.293Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Total-copies-perbranch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "Total-copies-perbranch",
+							"host": [
+								"Total-copies-perbranch"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/author/678d14ea6c6c0c649a789a82/total-copies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"author",
+										"678d14ea6c6c0c649a789a82",
+										"total-copies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"58-7RUAksto8TXo9zWwDn7hKF7KFqU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 21:27:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"totalCopies\": 20,\n        \"branchId\": \"678d0514980c7f6642a83ca7\",\n        \"branchName\": \"second Library\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzI1MjQwLCJleHAiOjE3MzczMjg4NDB9.ApBiYhtUBBxKkDMP7srnYJIhkCOSv0eTxszkBTAr5xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/user/profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13e-WBvLMM2/Zd4u097xoqY+1VRy6b4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 22:20:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User profile fetched successfully\",\n    \"data\": {\n        \"_id\": \"678bcc1f4d96c11688ae9e4f\",\n        \"memberId\": \"MEM174029\",\n        \"email\": \"user@example.com\",\n        \"returnRate\": 100,\n        \"borrowHistory\": [],\n        \"age\": 13,\n        \"name\": \"tony\",\n        \"role\": \"member\",\n        \"likedReviews\": [],\n        \"createdAt\": \"2025-01-18T15:43:27.226Z\",\n        \"updatedAt\": \"2025-01-18T15:43:27.226Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Borrow-byID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzI1MjQwLCJleHAiOjE3MzczMjg4NDB9.ApBiYhtUBBxKkDMP7srnYJIhkCOSv0eTxszkBTAr5xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/borrow-book/678d8187918741b393b3d46e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"borrow-book",
+								"678d8187918741b393b3d46e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/borrow-book/678d8187918741b393b3d46e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"borrow-book",
+										"678d8187918741b393b3d46e"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "419"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a3-b78q7+Emr641yhpsDr4F5nCbmW0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 22:53:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Book borrowed successfully!\",\n    \"borrowRecord\": {\n        \"memberId\": \"678bcc1f4d96c11688ae9e4f\",\n        \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n        \"branchId\": \"678d0514980c7f6642a83ca7\",\n        \"borrowedAt\": \"2025-01-19T22:53:03.249Z\",\n        \"returnBy\": \"2025-01-26T22:53:03.249Z\",\n        \"feedback\": null,\n        \"returnedAt\": null,\n        \"isOverdue\": false,\n        \"_id\": \"678d824faf354476f5f7044f\",\n        \"createdAt\": \"2025-01-19T22:53:03.255Z\",\n        \"updatedAt\": \"2025-01-19T22:53:03.255Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "testing-scheduler",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMyODY1NCwiZXhwIjoxNzM3MzMyMjU0fQ.yDmXVUwKW9eLecieFZZnOFYtRHy0kRvNsVHhfbgUeOw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/run-overdue-handler",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"run-overdue-handler"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/run-overdue-handler",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"run-overdue-handler"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-o8OwsjT40zsWUH1QA0wedPJfDOk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 23:19:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Scheduler function executed successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "return-book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzI5Mzk1LCJleHAiOjE3MzczMzI5OTV9.BK2X7pyUqDBK2jRAT6ovpMEKNRUTHBCF7SOnz6QBtdY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/return/678d824faf354476f5f7044f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"return",
+								"678d824faf354476f5f7044f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"feedback\": \"Great book! Really enjoyed it.\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/return/678d824faf354476f5f7044f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"return",
+										"678d824faf354476f5f7044f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19c-O6qP8hLbccGoqqifXoqufILxVq4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jan 2025 23:35:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feedback\": \"Great book! Really enjoyed it.\",\n    \"_id\": \"678d824faf354476f5f7044f\",\n    \"memberId\": \"678bcc1f4d96c11688ae9e4f\",\n    \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n    \"branchId\": \"678d0514980c7f6642a83ca7\",\n    \"borrowedAt\": \"2025-01-19T22:53:03.249Z\",\n    \"returnBy\": \"2025-01-26T22:53:03.249Z\",\n    \"returnedAt\": \"2025-01-19T23:35:49.302Z\",\n    \"isOverdue\": false,\n    \"createdAt\": \"2025-01-19T22:53:03.255Z\",\n    \"updatedAt\": \"2025-01-19T23:35:49.308Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "review-book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzMyMDg5LCJleHAiOjE3MzczMzU2ODl9.78H6gtwyjVqtB0CuadLIC7DgPX27uC_8HXvU11RPdXw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"review\": \"Amazing book! Highly recommend it.\",\n  \"rating\": 5\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/review/678d5f4ea04a01daa9f28d94",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"review",
+								"678d5f4ea04a01daa9f28d94"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "review-book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"review\": \"Amazing book! Highly recommend it.\",\n  \"rating\": 5\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/review/678d5f4ea04a01daa9f28d94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"review",
+										"678d5f4ea04a01daa9f28d94"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "274"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"112-mZkjWUkdvjwQa1hHtQSyYyCISxI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 00:34:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n    \"memberId\": \"678bcc1f4d96c11688ae9e4f\",\n    \"review\": \"Amazing book! Highly recommend it.\",\n    \"rating\": 5,\n    \"likes\": 0,\n    \"likedBy\": [],\n    \"_id\": \"678d9a22014e5ee134ef9970\",\n    \"createdAt\": \"2025-01-20T00:34:42.584Z\",\n    \"updatedAt\": \"2025-01-20T00:34:42.584Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Toggle-like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzMzNjg0LCJleHAiOjE3MzczMzcyODR9.66xMwm8VfAOAXmKqEPlgA380UXxWT1rwg8fm-IGa4Q8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/678d9a22014e5ee134ef9970/toggle-like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"678d9a22014e5ee134ef9970",
+								"toggle-like"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Like",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/678d9a22014e5ee134ef9970/toggle-like",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"678d9a22014e5ee134ef9970",
+										"toggle-like"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-bqY/3A6FuVhBFvTXi3pHaRa1RsQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 00:49:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review liked successfully.\",\n    \"likes\": 1\n}"
+						},
+						{
+							"name": "Unlike",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/678d9a22014e5ee134ef9970/toggle-like",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"678d9a22014e5ee134ef9970",
+										"toggle-like"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-HYjv29tBbxoLBwTY9DCT+QSZGEw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 00:50:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review unliked successfully.\",\n    \"likes\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "View-Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dashboard"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/dashboard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"dashboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12c-VGcPIbi2dCQZRaLo0v4WTK4/AJw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 01:11:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalBooks\": 1,\n    \"totalOverdueBooks\": 0,\n    \"authors\": {\n        \"total\": 1,\n        \"data\": [\n            {\n                \"_id\": \"678d14ea6c6c0c649a789a82\",\n                \"name\": {\n                    \"en\": \"John Doe\",\n                    \"ar\": \"جون دو\"\n                },\n                \"borrowCount\": 1\n            }\n        ]\n    },\n    \"books\": {\n        \"total\": 1,\n        \"data\": [\n            {\n                \"_id\": \"678d5f4ea04a01daa9f28d94\",\n                \"title\": {\n                    \"en\": \"My Book\",\n                    \"ar\": \"عنوان الكتاب\"\n                },\n                \"borrowCount\": 1\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "branch-analytics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMzNTQ1OSwiZXhwIjoxNzM3MzM5MDU5fQ.ae1ZfcD7PTvn_ab1ewJp8ifcqbffQdsxxnDMTvh2ewA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/dashboard/branch-analytics?branchId=678d0514980c7f6642a83ca7&timeFilter=day&startDate=2025-01-01&endDate=2025-01-30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dashboard",
+								"branch-analytics"
+							],
+							"query": [
+								{
+									"key": "branchId",
+									"value": "678d0514980c7f6642a83ca7"
+								},
+								{
+									"key": "timeFilter",
+									"value": "day"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-01-30"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "branch-analytics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/dashboard/branch-analytics?branchId=678d0514980c7f6642a83ca7&timeFilter=day&startDate=2025-01-01&endDate=2025-01-30",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"dashboard",
+										"branch-analytics"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "678d0514980c7f6642a83ca7"
+										},
+										{
+											"key": "timeFilter",
+											"value": "day"
+										},
+										{
+											"key": "startDate",
+											"value": "2025-01-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2025-01-30"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b9-gNIOvnO4Ev4ottxHygV/hu/35qI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 01:21:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mostPopularAuthors\": [\n        {\n            \"_id\": \"678d14ea6c6c0c649a789a82\",\n            \"name\": {\n                \"en\": \"John Doe\",\n                \"ar\": \"جون دو\"\n            },\n            \"borrowCount\": 1\n        }\n    ],\n    \"borrowedBooksOverTime\": [\n        {\n            \"date\": \"2025-01-19\",\n            \"numberOfBooks\": 1\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Fetch-books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books?page=1&limit=5&sort=createdAt&order=desc&genre=fiction&search=harry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "genre",
+									"value": "fiction"
+								},
+								{
+									"key": "search",
+									"value": "harry"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/books?page=1&limit=5&sort=createdAt&order=desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "sort",
+											"value": "createdAt"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										},
+										{
+											"key": "genre",
+											"value": "fiction",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "482"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e2-aVfWTtjCGNJfCGONSZF2dbKhuSs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 01:58:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 1,\n    \"page\": 1,\n    \"limit\": 5,\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"_id\": \"678d5f4ea04a01daa9f28d94\",\n            \"title\": {\n                \"en\": \"My Book\",\n                \"ar\": \"عنوان الكتاب\"\n            },\n            \"isbn\": \"ISBN 978-0-596-520068-7\",\n            \"genre\": \"Fiction\",\n            \"description\": {\n                \"en\": \"A great book\",\n                \"ar\": \"كتاب عظيم\"\n            },\n            \"isOpenToReviews\": true,\n            \"minAge\": 18,\n            \"authorId\": \"678d14ea6c6c0c649a789a82\",\n            \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n            \"pdfLink\": \"/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf\",\n            \"createdAt\": \"2025-01-19T20:23:42.742Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getbook-byid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/books/678d5f4ea04a01daa9f28d94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books",
+										"678d5f4ea04a01daa9f28d94"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "454"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c6-fWKVydNm9UwaOXaupRpeXyfvz6c\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 01:58:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678d5f4ea04a01daa9f28d94\",\n    \"title\": {\n        \"en\": \"My Book\",\n        \"ar\": \"عنوان الكتاب\"\n    },\n    \"isbn\": \"ISBN 978-0-596-520068-7\",\n    \"genre\": \"Fiction\",\n    \"description\": {\n        \"en\": \"A great book\",\n        \"ar\": \"كتاب عظيم\"\n    },\n    \"isOpenToReviews\": true,\n    \"minAge\": 18,\n    \"authorId\": \"678d14ea6c6c0c649a789a82\",\n    \"coverImageUrl\": \"/uploads/cover-images/1737317469517-tquebo17l5l.png\",\n    \"pdfLink\": \"/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf\",\n    \"createdAt\": \"2025-01-19T20:23:42.742Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

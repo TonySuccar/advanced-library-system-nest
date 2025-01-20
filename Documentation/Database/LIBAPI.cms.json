@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "678bc07bf7b64aa02546442d"
+  },
+  "email": "admin@admin.com",
+  "password": "$2a$10$2ZQroJ40uKylq2CJ5L/fyuKsgMciMaRQqbUDVVkdqdnet5QJQWcM2",
+  "role": "admin",
+  "name": "admin"
+},
+{
+  "_id": {
+    "$oid": "678cef72b2a24fb8aa534b86"
+  },
+  "email": "tony@succar.com",
+  "password": "$2a$10$iRkRSfXSwUQzpt9RiaFLh.4K7Nzjuxy.a6ym4kdfjmjtTWJQgkfK.",
+  "name": "tony",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2025-01-19T12:26:28.203Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-19T12:26:28.203Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678da2f2f7a8d575ab05d1ee"
+  },
+  "email": "tonyy@succar.com",
+  "password": "$2a$10$tWBQBMhltOL9AB4gaSWDJOp5PmYiWjYlwGRdTA6/apnPjGwGkpm5e",
+  "name": "tony",
+  "role": "intern",
+  "createdAt": {
+    "$date": "2025-01-20T01:12:20.992Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-20T01:12:20.992Z"
+  },
+  "__v": 0
+}]

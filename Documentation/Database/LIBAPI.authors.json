@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "678d14ea6c6c0c649a789a82"
+  },
+  "name": {
+    "en": "John Doe",
+    "ar": "جون دو"
+  },
+  "email": "johndoe@example.com",
+  "password": "$2a$10$t23ZNlue6f3H2oBdpNAnqu2HJUTmJR0KXeSaMiiW66e6dyB2IOdCW",
+  "biography": {
+    "en": "\tJohn is an accomplished author from the US.",
+    "ar": "جون كاتب بارع من الولايات المتحدة."
+  },
+  "profileImageUrl": "/uploads/profile-images/aa809ff2-e2a0-46ee-905f-47a2885061f5.JPEG",
+  "birthDate": {
+    "$date": "1990-01-01T00:00:00.000Z"
+  },
+  "role": "author",
+  "bookRequestIds": [
+    {
+      "$oid": "678d3b286afeb1fd7882f434"
+    },
+    {
+      "$oid": "678d57a907bebad06b49060d"
+    },
+    {
+      "$oid": "678d57da07bebad06b490616"
+    },
+    {
+      "$oid": "678d5c5d07bebad06b490643"
+    },
+    {
+      "$oid": "678d5e100ad00821d0e6a14d"
+    },
+    {
+      "$oid": "678d5e200ad00821d0e6a154"
+    },
+    {
+      "$oid": "678d9275de8fb0e54c5ed6ce"
+    },
+    {
+      "$oid": "678d941c93cadebda1668fbd"
+    }
+  ],
+  "averageApprovalTime": 752.894,
+  "createdAt": {
+    "$date": "2025-01-19T15:06:20.666Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-20T00:09:00.265Z"
+  },
+  "__v": 0
+}]

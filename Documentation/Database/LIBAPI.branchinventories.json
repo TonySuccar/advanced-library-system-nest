@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "678d8187918741b393b3d46e"
+  },
+  "branchId": {
+    "$oid": "678d0514980c7f6642a83ca7"
+  },
+  "bookId": {
+    "$oid": "678d5f4ea04a01daa9f28d94"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 19,
+  "createdAt": {
+    "$date": "2025-01-19T22:49:43.933Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-19T22:53:03.426Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "678d0514980c7f6642a83ca7"
+  },
+  "branchName": "second Library",
+  "location": "country",
+  "createdAt": {
+    "$date": "2025-01-19T13:58:44.605Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-19T13:58:44.605Z"
+  },
+  "__v": 0
+}]

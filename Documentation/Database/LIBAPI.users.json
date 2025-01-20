@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "678bcc1f4d96c11688ae9e4f"
+  },
+  "memberId": "MEM174029",
+  "email": "user@example.com",
+  "password": "$2a$10$UP19jtwyh5HEJvld/u37quRVKY5VLUAX6NUFPU.fQJE7yt4Lf.n.S",
+  "returnRate": 100,
+  "borrowHistory": [],
+  "age": 19,
+  "name": "tony",
+  "role": "member",
+  "likedReviews": [],
+  "createdAt": {
+    "$date": "2025-01-18T15:43:27.226Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-19T23:19:02.846Z"
+  },
+  "__v": 0
+}]

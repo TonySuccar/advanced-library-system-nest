@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "678d824faf354476f5f7044f"
+  },
+  "memberId": {
+    "$oid": "678bcc1f4d96c11688ae9e4f"
+  },
+  "bookId": {
+    "$oid": "678d5f4ea04a01daa9f28d94"
+  },
+  "branchId": "678d0514980c7f6642a83ca7",
+  "borrowedAt": {
+    "$date": "2025-01-19T22:53:03.249Z"
+  },
+  "returnBy": {
+    "$date": "2025-01-26T22:53:03.249Z"
+  },
+  "returnedAt": {
+    "$date": "2025-01-19T23:35:49.302Z"
+  },
+  "isOverdue": false,
+  "createdAt": {
+    "$date": "2025-01-19T22:53:03.255Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-19T23:35:49.308Z"
+  },
+  "__v": 0,
+  "feedback": "Great book! Really enjoyed it."
+}]

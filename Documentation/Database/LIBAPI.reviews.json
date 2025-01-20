@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "678d9a22014e5ee134ef9970"
+  },
+  "bookId": {
+    "$oid": "678d5f4ea04a01daa9f28d94"
+  },
+  "memberId": {
+    "$oid": "678bcc1f4d96c11688ae9e4f"
+  },
+  "review": "Amazing book! Highly recommend it.",
+  "rating": 5,
+  "likes": 0,
+  "likedBy": [],
+  "createdAt": {
+    "$date": "2025-01-20T00:34:42.584Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-20T00:50:20.324Z"
+  },
+  "__v": 20
+}]

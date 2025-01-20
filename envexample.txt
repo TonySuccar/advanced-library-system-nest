@@ -1,0 +1,8 @@
+MONGO_URI=databade uri
+PORT=3000
+EMAIL_HOST=sandbox.smtp.mailtrap.io
+EMAIL_PORT=2525
+EMAIL_USER=mail trap user
+EMAIL_PASS=mail trap pass
+JWT_SECRET=123
+CMS_EMAIL=admin@admin.com
