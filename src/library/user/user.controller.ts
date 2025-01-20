@@ -7,12 +7,16 @@ import {
   Param,
   Patch,
   Body,
+  Put,
+  Delete,
+  Query,
 } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../../auth/guards/roles.guard';
 import { Roles } from '../../auth/decorators/roles.decorator';
 import { UserService } from './user.service';
 import { AuthenticatedRequest } from 'src/types/auth.types';
+import { UpdateMemberDto } from './dtos/update-member.dto';
 
 @Controller('user')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -90,5 +94,46 @@ export class UserController {
   ) {
     const userId = req.user.userId;
     return this.userService.toggleLike(reviewId, userId);
+  }
+
+  @Get('average-members-return-rate')
+  @Roles('member', 'admin')
+  async getAverageMembersReturnRate() {
+    const averageRate = await this.userService.getAverageMembersReturnRate();
+    return {
+      message: 'Average members return rate retrieved successfully.',
+      averageReturnRate: `${averageRate.toFixed(2)}%`,
+    };
+  }
+
+  @Put(':memberId')
+  @Roles('member')
+  async updateMember(
+    @Param('memberId') memberId: string,
+    @Body() updateMemberDto: UpdateMemberDto,
+  ) {
+    const updatedMember = await this.userService.updateMember(
+      memberId,
+      updateMemberDto,
+    );
+
+    return {
+      message: 'Member updated successfully.',
+      member: updatedMember,
+    };
+  }
+
+  @Delete(':memberId')
+  @Roles('admin')
+  async deleteMember(@Param('memberId') memberId: string) {
+    return this.userService.deleteMember(memberId);
+  }
+  @Get()
+  async getMembers(
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 10,
+    @Query('search') search: string = '',
+  ) {
+    return this.userService.getMembers(page, limit, search);
   }
 }

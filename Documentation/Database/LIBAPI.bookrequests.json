@@ -101,8 +101,10 @@
     "$date": "2025-01-01T00:00:00.000Z"
   },
   "pdfLink": "/uploads/book-pdfs/1737317920258-1q8jeeirgzo.pdf",
-  "status": "pending",
-  "responseTime": null,
+  "status": "accepted",
+  "responseTime": {
+    "$date": "2025-01-20T14:32:17.615Z"
+  },
   "requestTime": {
     "$date": "2025-01-19T20:18:40.442Z"
   },
@@ -110,9 +112,10 @@
     "$date": "2025-01-19T20:18:40.443Z"
   },
   "updatedAt": {
-    "$date": "2025-01-19T20:18:40.443Z"
+    "$date": "2025-01-20T14:32:17.619Z"
   },
-  "__v": 0
+  "__v": 0,
+  "approvalTime": 65617.173
 },
 {
   "_id": {
@@ -185,6 +188,43 @@
   },
   "updatedAt": {
     "$date": "2025-01-20T00:09:00.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678e5596ef01716557bfbcad"
+  },
+  "authorId": {
+    "$oid": "678d14ea6c6c0c649a789a82"
+  },
+  "title": {
+    "en": "book",
+    "ar": "عنوان الكتا"
+  },
+  "isbn": "ISBN 978-0-599-598768-2",
+  "genre": "Action",
+  "description": {
+    "en": "A great boo",
+    "ar": "كتاب عظي"
+  },
+  "isOpenToReviews": false,
+  "minAge": 18,
+  "coverImageUrl": "/uploads/cover-images/1737381270018-9bvfgwcyp9s.png",
+  "publishedDate": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  },
+  "pdfLink": "/uploads/book-pdfs/1737381270019-4rtrgzesvw5.pdf",
+  "status": "pending",
+  "responseTime": null,
+  "requestTime": {
+    "$date": "2025-01-20T13:54:30.231Z"
+  },
+  "createdAt": {
+    "$date": "2025-01-20T13:54:30.238Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-20T13:54:30.238Z"
   },
   "__v": 0
 }]

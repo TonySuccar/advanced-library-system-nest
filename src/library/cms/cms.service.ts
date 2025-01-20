@@ -188,9 +188,7 @@ export class CMSService {
       publishedDate: bookRequest.publishedDate,
       pdfLink: bookRequest.pdfLink,
       authorId: bookRequest.authorId,
-      numberOfAvailableCopies: 0,
-      isBorrowable: false,
-      numberOfBorrowableDays: 0,
+      isPublished: true,
     });
 
     await newBook.save();

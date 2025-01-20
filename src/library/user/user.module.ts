@@ -11,6 +11,7 @@ import {
 import { Borrow, BorrowSchema } from './schemas/borrow.schema';
 import { TaskService } from './task.service';
 import { Review, ReviewSchema } from './schemas/review.schema';
+import { MailerService } from 'src/common/mailer.service';
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import { Review, ReviewSchema } from './schemas/review.schema';
     ]),
   ],
   controllers: [UserController],
-  providers: [UserService, TaskService],
+  providers: [UserService, TaskService, MailerService],
   exports: [
     UserService,
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),

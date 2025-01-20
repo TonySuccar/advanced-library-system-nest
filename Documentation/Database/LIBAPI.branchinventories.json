@@ -6,16 +6,16 @@
     "$oid": "678d0514980c7f6642a83ca7"
   },
   "bookId": {
-    "$oid": "678d5f4ea04a01daa9f28d94"
+    "$oid": "678e5e7137ef6c8e11a46e10"
   },
   "totalCopies": 20,
   "borrowableDays": 7,
-  "availableCopies": 19,
+  "availableCopies": 18,
   "createdAt": {
     "$date": "2025-01-19T22:49:43.933Z"
   },
   "updatedAt": {
-    "$date": "2025-01-19T22:53:03.426Z"
+    "$date": "2025-01-20T21:23:31.679Z"
   },
   "__v": 0
 }]

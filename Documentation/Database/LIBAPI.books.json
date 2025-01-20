@@ -1,32 +1,33 @@
 [{
   "_id": {
-    "$oid": "678d5f4ea04a01daa9f28d94"
+    "$oid": "678e5e7137ef6c8e11a46e10"
   },
   "title": {
-    "en": "My Book",
-    "ar": "عنوان الكتاب"
+    "en": "My Book2",
+    "ar": "عنوان الكتا"
   },
-  "isbn": "ISBN 978-0-596-520068-7",
-  "genre": "Fiction",
+  "isbn": "ISBN 978-0-596-598768-7",
+  "genre": "Action",
   "description": {
-    "en": "A great book",
-    "ar": "كتاب عظيم"
+    "en": "A great boo",
+    "ar": "كتاب عظي"
   },
-  "isOpenToReviews": true,
+  "isOpenToReviews": false,
+  "isPublished": true,
   "minAge": 18,
   "authorId": {
     "$oid": "678d14ea6c6c0c649a789a82"
   },
-  "coverImageUrl": "/uploads/cover-images/1737317469517-tquebo17l5l.png",
+  "coverImageUrl": "/uploads/cover-images/1737317920257-95jz9t23ml.png",
   "publishedDate": {
     "$date": "2025-01-01T00:00:00.000Z"
   },
-  "pdfLink": "/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf",
+  "pdfLink": "/uploads/book-pdfs/1737317920258-1q8jeeirgzo.pdf",
   "createdAt": {
-    "$date": "2025-01-19T20:23:42.742Z"
+    "$date": "2025-01-20T14:32:17.803Z"
   },
   "updatedAt": {
-    "$date": "2025-01-19T20:23:42.742Z"
+    "$date": "2025-01-20T14:32:17.803Z"
   },
   "__v": 0
 }]

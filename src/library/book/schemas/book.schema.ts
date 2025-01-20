@@ -20,6 +20,9 @@ export class Book {
   @Prop({ required: true, default: true })
   isOpenToReviews: boolean;
 
+  @Prop({ required: true, default: true })
+  isPublished: boolean;
+
   @Prop({ required: true })
   minAge: number;
 

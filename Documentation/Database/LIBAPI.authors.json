@@ -41,14 +41,17 @@
     },
     {
       "$oid": "678d941c93cadebda1668fbd"
+    },
+    {
+      "$oid": "678e5596ef01716557bfbcad"
     }
   ],
-  "averageApprovalTime": 752.894,
+  "averageApprovalTime": 33185.0335,
   "createdAt": {
     "$date": "2025-01-19T15:06:20.666Z"
   },
   "updatedAt": {
-    "$date": "2025-01-20T00:09:00.265Z"
+    "$date": "2025-01-20T14:32:18.330Z"
   },
   "__v": 0
 }]

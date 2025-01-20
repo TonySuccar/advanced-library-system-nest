@@ -1987,6 +1987,190 @@
 							"body": "[\n    {\n        \"totalCopies\": 20,\n        \"branchId\": \"678d0514980c7f6642a83ca7\",\n        \"branchName\": \"second Library\"\n    }\n]"
 						}
 					]
+				},
+				{
+					"name": "Delete-author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzM4NTI1MiwiZXhwIjoxNzM3Mzg4ODUyfQ.bVcaXeDn7fBsOTDLcLPRpdWOS2WQLYx2iHFhtq58-c0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/author/678e677eaff80ff9f169ad0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"author",
+								"678e677eaff80ff9f169ad0c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/author/678e677eaff80ff9f169ad0c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"author",
+										"678e677eaff80ff9f169ad0c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-JgL8dp0qiId2uTd72csAJunt2z0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 15:13:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Author deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "authorby-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzM4NTI1MiwiZXhwIjoxNzM3Mzg4ODUyfQ.bVcaXeDn7fBsOTDLcLPRpdWOS2WQLYx2iHFhtq58-c0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/author/profile/678d14ea6c6c0c649a789a82",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"author",
+								"profile",
+								"678d14ea6c6c0c649a789a82"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "ar",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/author/profile/678d14ea6c6c0c649a789a82",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"author",
+										"profile",
+										"678d14ea6c6c0c649a789a82"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "273"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"111-Vt6nlasQrdQfS90W9dCm2/bkeVo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 15:39:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678d14ea6c6c0c649a789a82\",\n    \"name\": \"جون دو\",\n    \"biography\": \"جون كاتب بارع من الولايات المتحدة.\",\n    \"profileImageUrl\": \"/uploads/profile-images/aa809ff2-e2a0-46ee-905f-47a2885061f5.JPEG\",\n    \"birthDate\": \"1990-01-01T00:00:00.000Z\",\n    \"role\": \"author\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -2118,7 +2302,7 @@
 					},
 					"response": [
 						{
-							"name": "New Request",
+							"name": "Borrow-byID",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2159,15 +2343,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "419"
+									"value": "449"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1a3-b78q7+Emr641yhpsDr4F5nCbmW0\""
+									"value": "W/\"1c1-CWPv0lUrfJjd5khujb1jFZ/4+II\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 19 Jan 2025 22:53:03 GMT"
+									"value": "Mon, 20 Jan 2025 21:23:36 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2179,7 +2363,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Book borrowed successfully!\",\n    \"borrowRecord\": {\n        \"memberId\": \"678bcc1f4d96c11688ae9e4f\",\n        \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n        \"branchId\": \"678d0514980c7f6642a83ca7\",\n        \"borrowedAt\": \"2025-01-19T22:53:03.249Z\",\n        \"returnBy\": \"2025-01-26T22:53:03.249Z\",\n        \"feedback\": null,\n        \"returnedAt\": null,\n        \"isOverdue\": false,\n        \"_id\": \"678d824faf354476f5f7044f\",\n        \"createdAt\": \"2025-01-19T22:53:03.255Z\",\n        \"updatedAt\": \"2025-01-19T22:53:03.255Z\",\n        \"__v\": 0\n    }\n}"
+							"body": "{\n    \"message\": \"Book borrowed successfully! The author has been notified.\",\n    \"borrowRecord\": {\n        \"memberId\": \"678bcc1f4d96c11688ae9e4f\",\n        \"bookId\": \"678e5e7137ef6c8e11a46e10\",\n        \"branchId\": \"678d0514980c7f6642a83ca7\",\n        \"borrowedAt\": \"2025-01-20T21:23:31.500Z\",\n        \"returnBy\": \"2025-01-27T21:23:31.500Z\",\n        \"feedback\": null,\n        \"returnedAt\": null,\n        \"isOverdue\": false,\n        \"_id\": \"678ebed39c72446515deacdb\",\n        \"createdAt\": \"2025-01-20T21:23:31.506Z\",\n        \"updatedAt\": \"2025-01-20T21:23:31.506Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				},
@@ -2610,6 +2794,362 @@
 							"body": "{\n    \"message\": \"Review unliked successfully.\",\n    \"likes\": 0\n}"
 						}
 					]
+				},
+				{
+					"name": "Avgmember-ReturnRate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzM4MzA5OSwiZXhwIjoxNzM3Mzg2Njk5fQ.zY_AcNSu6vByFA45pt9uKI55I6SR-iKF7TY40DpSLAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/average-members-return-rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"average-members-return-rate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/average-members-return-rate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"average-members-return-rate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f-M4dyGJk3CXuHC10hriHzEidStkA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 14:48:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Average members return rate retrieved successfully.\",\n    \"averageReturnRate\": \"100.00%\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update-member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3NDA0MTE2LCJleHAiOjE3Mzc0MDc3MTZ9.x5sWbQC8mHgs087RPiX7BB9b8rVLzTNjO7ZvHL1CFCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"tony\",\n  \"email\": \"user@example.com\",\n  \"age\": 30\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/678bcc1f4d96c11688ae9e4f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"678bcc1f4d96c11688ae9e4f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"tony\",\n  \"email\": \"user@example.com\",\n  \"age\": 30\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/678bcc1f4d96c11688ae9e4f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"678bcc1f4d96c11688ae9e4f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "389"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"185-DVxduCEpeFkYQd3Ejo5KZOJVAmw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 20:18:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member updated successfully.\",\n    \"member\": {\n        \"_id\": \"678bcc1f4d96c11688ae9e4f\",\n        \"memberId\": \"MEM174029\",\n        \"email\": \"user@example.com\",\n        \"password\": \"$2a$10$UP19jtwyh5HEJvld/u37quRVKY5VLUAX6NUFPU.fQJE7yt4Lf.n.S\",\n        \"returnRate\": 100,\n        \"borrowHistory\": [],\n        \"age\": 30,\n        \"name\": \"tony\",\n        \"role\": \"member\",\n        \"likedReviews\": [],\n        \"createdAt\": \"2025-01-18T15:43:27.226Z\",\n        \"updatedAt\": \"2025-01-20T20:18:49.568Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete-member-byid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzQwNTI2NywiZXhwIjoxNzM3NDA4ODY3fQ.Ekfvq6eDifxtbXroJ4mQToJy9K1bBpviq5t5K5fIpEc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/678eb31ddb7efe8e4b7aa1ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"678eb31ddb7efe8e4b7aa1ec"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/678eb31ddb7efe8e4b7aa1ec",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"678eb31ddb7efe8e4b7aa1ec"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-PXXsdBys5hAkyn44CeJYDfhA5sg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 20:34:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GetAll-members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzQwNTI2NywiZXhwIjoxNzM3NDA4ODY3fQ.Ekfvq6eDifxtbXroJ4mQToJy9K1bBpviq5t5K5fIpEc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "164"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-0shU363IJozxo5sVWmA2sjuGXso\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 20:42:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 1,\n    \"page\": 1,\n    \"limit\": 10,\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"name\": \"tony\",\n            \"memberId\": \"MEM174029\",\n            \"email\": \"user@example.com\",\n            \"numberOfBorrowedBooks\": 0,\n            \"returnRate\": 100\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3002,6 +3542,311 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"_id\": \"678d5f4ea04a01daa9f28d94\",\n    \"title\": {\n        \"en\": \"My Book\",\n        \"ar\": \"عنوان الكتاب\"\n    },\n    \"isbn\": \"ISBN 978-0-596-520068-7\",\n    \"genre\": \"Fiction\",\n    \"description\": {\n        \"en\": \"A great book\",\n        \"ar\": \"كتاب عظيم\"\n    },\n    \"isOpenToReviews\": true,\n    \"minAge\": 18,\n    \"authorId\": \"678d14ea6c6c0c649a789a82\",\n    \"coverImageUrl\": \"/uploads/cover-images/1737317469517-tquebo17l5l.png\",\n    \"pdfLink\": \"/uploads/book-pdfs/1737317469517-04ir6b4bx677.pdf\",\n    \"createdAt\": \"2025-01-19T20:23:42.742Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Update-book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhkMTRlYTZjNmMwYzY0OWE3ODlhODIiLCJlbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzM3MzgxMjM5LCJleHAiOjE3MzczODQ4Mzl9.Y-T2aOQO_MO-7PhjgIiBfKibgKBiCKwfafGidrndVos",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title[en]",
+									"value": "Updated Title",
+									"type": "text"
+								},
+								{
+									"key": "title[ar]",
+									"value": "عنوان محدث",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/succar/Desktop/greategatsby.JPEG"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/succar/Desktop/dummy-pdf_2 2.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/books/678e526e28f0a8e5ba096b7c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"678e526e28f0a8e5ba096b7c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title[en]",
+											"value": "Updated Title",
+											"type": "text"
+										},
+										{
+											"key": "title[ar]",
+											"value": "عنوان محدث",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/succar/Desktop/greategatsby.JPEG"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/succar/Desktop/dummy-pdf_2 2.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/books/678e526e28f0a8e5ba096b7c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books",
+										"678e526e28f0a8e5ba096b7c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "554"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22a-sSt6qIZd+oFB6EByY0lv4vPwsjY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 14:19:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"678e526e28f0a8e5ba096b7c\",\n    \"title\": {\n        \"en\": \"Updated Title\",\n        \"ar\": \"عنوان محدث\"\n    },\n    \"isbn\": \"ISBN 978-0-596-598768-7\",\n    \"genre\": \"Action\",\n    \"description\": {\n        \"en\": \"A great boo\",\n        \"ar\": \"كتاب عظي\"\n    },\n    \"isOpenToReviews\": false,\n    \"isPublished\": true,\n    \"minAge\": 18,\n    \"authorId\": \"678d14ea6c6c0c649a789a82\",\n    \"coverImageUrl\": \"/uploads/cover-images/1737382749680-u4gocgism0n.JPEG\",\n    \"publishedDate\": \"2025-01-01T00:00:00.000Z\",\n    \"pdfLink\": \"/uploads/book-pdfs/1737382749680-6r533s80v5c.pdf\",\n    \"createdAt\": \"2025-01-20T13:41:02.612Z\",\n    \"updatedAt\": \"2025-01-20T14:19:09.858Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete-book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzM4MzA5OSwiZXhwIjoxNzM3Mzg2Njk5fQ.zY_AcNSu6vByFA45pt9uKI55I6SR-iKF7TY40DpSLAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/678d5f4ea04a01daa9f28d94",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"678d5f4ea04a01daa9f28d94"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/books/678d5f4ea04a01daa9f28d94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books",
+										"678d5f4ea04a01daa9f28d94"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-l8OOMwEFTDJ8S/e3uCEmfi30BdA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 14:33:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Book deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "books-publish-rate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzM4MzA5OSwiZXhwIjoxNzM3Mzg2Njk5fQ.zY_AcNSu6vByFA45pt9uKI55I6SR-iKF7TY40DpSLAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/books-publish-rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"books-publish-rate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/books/books-publish-rate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books",
+										"books-publish-rate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-fP0TMJl1xlvL5XE+Ggh9GEY1hpk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 20 Jan 2025 14:43:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Books publish rate retrieved successfully.\",\n    \"booksPublishRate\": \"100.00%\"\n}"
 						}
 					]
 				}

@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Book, BookDocument } from './schemas/book.schema';
+import { UpdateBookDto } from './dtos/update-book.dto';
 
 interface FetchBooksFilters {
   page: number;
@@ -72,5 +73,48 @@ export class BookService {
       throw new NotFoundException('Book not found.');
     }
     return book;
+  }
+
+  async updateBook(
+    bookId: string,
+    updateBookDto: UpdateBookDto,
+    fileUrls: { coverImageUrl?: string; pdfLink?: string },
+  ) {
+    const book = await this.bookModel.findById(bookId);
+    if (!book) {
+      throw new NotFoundException('Book not found.');
+    }
+
+    Object.assign(book, updateBookDto);
+
+    if (fileUrls.coverImageUrl) {
+      book.coverImageUrl = fileUrls.coverImageUrl;
+    }
+    if (fileUrls.pdfLink) {
+      book.pdfLink = fileUrls.pdfLink;
+    }
+
+    return book.save();
+  }
+
+  async deleteBookById(id: string): Promise<boolean> {
+    const result = await this.bookModel.findByIdAndDelete(id);
+    if (!result) {
+      return false;
+    }
+    return true;
+  }
+
+  async getBooksPublishRate(): Promise<number> {
+    const totalBooks = await this.bookModel.countDocuments();
+    if (totalBooks === 0) {
+      return 0; // Avoid division by zero
+    }
+
+    const publishedBooks = await this.bookModel.countDocuments({
+      isPublished: true,
+    });
+
+    return (publishedBooks / totalBooks) * 100;
   }
 }

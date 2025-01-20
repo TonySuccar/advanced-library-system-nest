@@ -7,7 +7,7 @@
   "password": "$2a$10$UP19jtwyh5HEJvld/u37quRVKY5VLUAX6NUFPU.fQJE7yt4Lf.n.S",
   "returnRate": 100,
   "borrowHistory": [],
-  "age": 19,
+  "age": 30,
   "name": "tony",
   "role": "member",
   "likedReviews": [],
@@ -15,7 +15,7 @@
     "$date": "2025-01-18T15:43:27.226Z"
   },
   "updatedAt": {
-    "$date": "2025-01-19T23:19:02.846Z"
+    "$date": "2025-01-20T20:18:49.568Z"
   },
   "__v": 0
 }]

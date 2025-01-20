@@ -27,4 +27,32 @@
   },
   "__v": 0,
   "feedback": "Great book! Really enjoyed it."
+},
+{
+  "_id": {
+    "$oid": "678ebed39c72446515deacdb"
+  },
+  "memberId": {
+    "$oid": "678bcc1f4d96c11688ae9e4f"
+  },
+  "bookId": {
+    "$oid": "678e5e7137ef6c8e11a46e10"
+  },
+  "branchId": "678d0514980c7f6642a83ca7",
+  "borrowedAt": {
+    "$date": "2025-01-20T21:23:31.500Z"
+  },
+  "returnBy": {
+    "$date": "2025-01-27T21:23:31.500Z"
+  },
+  "feedback": null,
+  "returnedAt": null,
+  "isOverdue": false,
+  "createdAt": {
+    "$date": "2025-01-20T21:23:31.506Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-20T21:23:31.506Z"
+  },
+  "__v": 0
 }]

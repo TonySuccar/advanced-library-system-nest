@@ -14,20 +14,24 @@ import {
 } from '../cms/schemas/branchInventory.schema';
 import { Book, BookDocument } from '../book/schemas/book.schema';
 import { Review, ReviewDocument } from './schemas/review.schema';
+import { UpdateMemberDto } from './dtos/update-member.dto';
+import * as bcrypt from 'bcryptjs';
+import { MailerService } from 'src/common/mailer.service';
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectModel(Review.name) private reviewModel: Model<ReviewDocument>,
     @InjectModel(Book.name) private bookModel: Model<BookDocument>,
+    private readonly mailerService: MailerService,
     @InjectModel(BranchInventory.name)
     private branchInventoryModel: Model<BranchInventoryDocument>,
     @InjectModel(User.name) private userModel: Model<UserDocument>,
-    @InjectModel(Borrow.name) private borrowModel: Model<BorrowDocument>, // Inject User model
+    @InjectModel(Borrow.name) private borrowModel: Model<BorrowDocument>,
   ) {}
 
   async getUserById(userId: string): Promise<User> {
-    const user = await this.userModel.findById(userId).select('-password'); // Exclude password
+    const user = await this.userModel.findById(userId).select('-password');
     if (!user) {
       throw new NotFoundException('User not found');
     }
@@ -35,70 +39,120 @@ export class UserService {
   }
 
   async borrowBook(branchInventoryId: string, memberId: string) {
-    const member = await this.userModel.findById(memberId);
+    // Convert `branchInventoryId` and `memberId` to `ObjectId`
+    let inventoryObjectId: Types.ObjectId;
+    let memberObjectId: Types.ObjectId;
+
+    try {
+      inventoryObjectId = new Types.ObjectId(branchInventoryId);
+      memberObjectId = new Types.ObjectId(memberId);
+    } catch (error) {
+      throw new BadRequestException('Invalid ID format.', error);
+    }
+
+    // Validate member existence
+    const member = await this.userModel.findById(memberObjectId);
     if (!member) {
       throw new NotFoundException('Member not found.');
     }
 
+    // Check if the member's return rate is greater than 30%
     if (member.returnRate < 30) {
       throw new ForbiddenException(
         'Your return rate is below 30%. Borrowing is not allowed.',
       );
     }
 
+    // Fetch branch inventory and book details using aggregation
     const branchInventory = await this.branchInventoryModel.aggregate([
       {
-        $match: { _id: new Types.ObjectId(branchInventoryId) },
+        $match: { _id: inventoryObjectId }, // Match the branch inventory by ObjectId
       },
       {
         $lookup: {
-          from: 'books',
+          from: 'books', // Join with the 'books' collection
           localField: 'bookId',
           foreignField: '_id',
           as: 'bookDetails',
         },
       },
       {
-        $unwind: '$bookDetails',
+        $unwind: '$bookDetails', // Flatten the book details array
+      },
+      {
+        $lookup: {
+          from: 'authors', // Join with the 'authors' collection
+          localField: 'bookDetails.authorId',
+          foreignField: '_id',
+          as: 'authorDetails',
+        },
+      },
+      {
+        $unwind: '$authorDetails', // Flatten the author details array
       },
     ]);
 
+    // Check if the branch inventory exists
     if (!branchInventory || branchInventory.length === 0) {
       throw new NotFoundException('Branch inventory not found.');
     }
 
     const inventory = branchInventory[0];
     const book = inventory.bookDetails;
+    const author = inventory.authorDetails;
 
+    // Check if there are available copies
     if (inventory.availableCopies <= 0) {
       throw new BadRequestException('No available copies to borrow.');
     }
 
+    // Check if the member's age meets the book's minimum age requirement
     if (member.age < book.minAge) {
       throw new ForbiddenException(
         `You must be at least ${book.minAge} years old to borrow this book.`,
       );
     }
 
+    // Calculate return date based on borrowable days
     const borrowedAt = new Date();
     const returnBy = new Date();
     returnBy.setDate(borrowedAt.getDate() + inventory.borrowableDays);
 
+    // Create a new borrow record
     const borrowRecord = new this.borrowModel({
-      memberId,
-      bookId: book._id,
-      branchId: inventory.branchId.toString(),
+      memberId: memberObjectId, // Use ObjectId for memberId
+      bookId: book._id, // Use ObjectId for bookId
+      branchId: inventory.branchId, // Use ObjectId for branchId
       borrowedAt,
       returnBy,
     });
     await borrowRecord.save();
 
-    await this.branchInventoryModel.findByIdAndUpdate(branchInventoryId, {
-      $inc: { availableCopies: -1 },
+    // Update branch inventory to decrement available copies
+    await this.branchInventoryModel.findByIdAndUpdate(inventoryObjectId, {
+      $inc: { availableCopies: -1 }, // Decrement available copies
     });
 
+    // Notify the author via email
+    const subject = `Your Book Has Been Borrowed: ${book.title.en}`;
+    const text = `Dear ${author.name.en}, 
+  
+  Your book titled "${book.title.en}" has been borrowed by a member. 
+  
+  Best regards, 
+  Your Library Team`;
+
+    const html = `
+      <p>Dear <strong>${author.name.en}</strong>,</p>
+      <p>Your book titled "<strong>${book.title.en}</strong>" has been borrowed by a member.</p>
+      <p>Best regards,</p>
+      <p>Your Library Team</p>
+    `;
+
+    await this.mailerService.sendEmail(author.email, subject, text, html);
+
     return {
-      message: 'Book borrowed successfully!',
+      message: 'Book borrowed successfully! The author has been notified.',
       borrowRecord,
     };
   }
@@ -236,5 +290,115 @@ export class UserService {
         likes: review.likes,
       };
     }
+  }
+
+  async getAverageMembersReturnRate(): Promise<number> {
+    const members = await this.userModel
+      .find({ role: 'member' })
+      .select('returnRate');
+    if (members.length === 0) {
+      return 0;
+    }
+
+    const totalReturnRate = members.reduce(
+      (sum, member) => sum + member.returnRate,
+      0,
+    );
+    return totalReturnRate / members.length;
+  }
+
+  async updateMember(memberId: string, updateMemberDto: UpdateMemberDto) {
+    const objectIdMemberId = new Types.ObjectId(memberId);
+
+    const member = await this.userModel.findOne({ _id: objectIdMemberId });
+    if (!member) {
+      throw new NotFoundException('Member not found.');
+    }
+
+    if (updateMemberDto.password) {
+      updateMemberDto.password = await bcrypt.hash(
+        updateMemberDto.password,
+        10,
+      );
+    }
+
+    Object.assign(member, updateMemberDto);
+
+    return member.save();
+  }
+
+  async deleteMember(memberId: string): Promise<{ message: string }> {
+    if (!Types.ObjectId.isValid(memberId)) {
+      throw new BadRequestException('Invalid Member ID.');
+    }
+    const member = await this.userModel.findById(memberId);
+    if (!member) {
+      throw new NotFoundException('Member not found.');
+    }
+    await this.userModel.findByIdAndDelete(memberId);
+
+    return { message: 'Member deleted successfully.' };
+  }
+  async getMembers(
+    page: number = 1,
+    limit: number = 10,
+    search: string = '',
+  ): Promise<{
+    total: number;
+    page: number;
+    limit: number;
+    totalPages: number;
+    data: Array<{
+      name: string;
+      memberId: string;
+      email: string;
+      numberOfBorrowedBooks: number;
+      returnRate: number;
+    }>;
+  }> {
+    // Validate pagination inputs
+    const pageNumber = Math.max(1, page); // Ensure page is at least 1
+    const limitNumber = Math.max(1, limit); // Ensure limit is at least 1
+    const skip = (pageNumber - 1) * limitNumber;
+
+    // Build search filter
+    const searchFilter = search
+      ? {
+          $or: [
+            { name: { $regex: search, $options: 'i' } }, // Case-insensitive search for name
+            { memberId: { $regex: search, $options: 'i' } }, // Case-insensitive search for memberId
+            { email: { $regex: search, $options: 'i' } }, // Case-insensitive search for email
+          ],
+        }
+      : {};
+
+    // Query to fetch paginated and sorted results
+    const members = await this.userModel
+      .find(searchFilter)
+      .sort({ returnRate: -1 }) // Sort by return rate descending
+      .skip(skip)
+      .limit(limitNumber)
+      .select('name memberId email returnRate borrowHistory') // Return only specific fields
+      .lean();
+
+    // Transform data to include the number of borrowed books
+    const data = members.map((member) => ({
+      name: member.name,
+      memberId: member.memberId,
+      email: member.email,
+      numberOfBorrowedBooks: member.borrowHistory.length,
+      returnRate: member.returnRate,
+    }));
+
+    // Total number of members
+    const total = await this.userModel.countDocuments(searchFilter);
+
+    return {
+      total,
+      page: pageNumber,
+      limit: limitNumber,
+      totalPages: Math.ceil(total / limitNumber),
+      data,
+    };
   }
 }

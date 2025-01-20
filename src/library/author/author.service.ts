@@ -133,4 +133,45 @@ export class AuthorService {
 
     return results;
   }
+
+  async deleteAuthor(authorId: string): Promise<boolean> {
+    if (!Types.ObjectId.isValid(authorId)) {
+      throw new NotFoundException('Invalid author ID.');
+    }
+
+    const author = await this.authorModel.findById(authorId);
+    if (!author) {
+      throw new NotFoundException('Author not found.');
+    }
+
+    const result = await this.authorModel.findByIdAndDelete(authorId);
+
+    return result !== null;
+  }
+
+  async getAuthorProfileById(authorId: string, language: string) {
+    // Fetch the author from the database
+    const author = await this.authorModel
+      .findById(authorId)
+      .select('-password -updatedAt -averageApprovalTime -bookRequestIds') // Exclude sensitive/unnecessary fields
+      .exec();
+
+    // Throw an exception if the author is not found
+    if (!author) {
+      throw new NotFoundException('Author not found.');
+    }
+
+    // Validate the language and default to 'en' if invalid
+    const selectedLanguage = ['en', 'ar'].includes(language) ? language : 'en';
+
+    // Return only the requested language fields
+    return {
+      _id: author._id,
+      name: author.name[selectedLanguage],
+      biography: author.biography[selectedLanguage],
+      profileImageUrl: author.profileImageUrl,
+      birthDate: author.birthDate,
+      role: author.role,
+    };
+  }
 }

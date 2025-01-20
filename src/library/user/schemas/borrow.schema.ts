@@ -20,7 +20,7 @@ export class Borrow {
   @Prop({ required: true })
   returnBy: Date;
 
-  @Prop({ required: true, default: null })
+  @Prop({ default: null })
   feedback: string;
 
   @Prop({ default: null })

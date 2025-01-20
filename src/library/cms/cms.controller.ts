@@ -38,17 +38,17 @@ export class CMSController {
     );
   }
   @Post('create-author')
-  @Roles('admin')
+  @Roles('admin') // Only admins can create authors
   @UseInterceptors(
     FileUploadInterceptor.uploadFile(
-      'profileImage',
-      /\/(jpg|jpeg|png|pdf)$/,
-      './uploads/profile-images',
+      'profileImage', // The field name in the form-data
+      /\/(jpg|jpeg|png)$/, // Allowed file types
+      './uploads/profile-images', // Destination folder for the uploaded file
     ),
   )
   async createAuthor(
     @Body() createAuthorDto: CreateAuthorDto,
-    @UploadedFile() profileImage: Express.Multer.File,
+    @UploadedFile() profileImage: Express.Multer.File, // Handle the uploaded file
   ) {
     if (!profileImage) {
       throw new BadRequestException('Profile image is required.');

@@ -2,7 +2,9 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   Get,
+  NotFoundException,
   Param,
   Post,
   Req,
@@ -13,13 +15,11 @@ import {
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { Roles } from 'src/auth/decorators/roles.decorator';
-import { FilesInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
-import { extname } from 'path';
-import * as fs from 'fs';
 import { RequestBookDto } from './dtos/request-book.dto';
 import { AuthorService } from './author.service';
 import { AuthenticatedRequest } from 'src/types/auth.types';
+import { FileUploadInterceptor } from 'src/common/file-upload.interceptor';
+import { Headers } from '@nestjs/common';
 
 @Controller('author')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -28,43 +28,7 @@ export class AuthorController {
 
   @Post('request-book')
   @Roles('author')
-  @UseInterceptors(
-    FilesInterceptor('files', 2, {
-      storage: diskStorage({
-        destination: (req, file, cb) => {
-          const folder = file.mimetype.startsWith('image/')
-            ? './uploads/cover-images'
-            : './uploads/book-pdfs';
-
-          if (!fs.existsSync(folder)) {
-            fs.mkdirSync(folder, { recursive: true });
-          }
-
-          cb(null, folder);
-        },
-        filename: (req, file, cb) => {
-          const uniqueName = `${Date.now()}-${Math.random()
-            .toString(36)
-            .substring(2, 15)}${extname(file.originalname)}`;
-          cb(null, uniqueName);
-        },
-      }),
-      fileFilter: (req, file, cb) => {
-        if (!file.mimetype.match(/\/(jpg|jpeg|png|pdf)$/)) {
-          return cb(
-            new BadRequestException(
-              'Invalid file type. Only JPG, PNG, and PDF files are allowed.',
-            ),
-            false,
-          );
-        }
-        cb(null, true);
-      },
-      limits: {
-        fileSize: 10 * 1024 * 1024, // 10MB limit
-      },
-    }),
-  )
+  @UseInterceptors(FileUploadInterceptor.addTwoFiles('files', './uploads'))
   async requestBook(
     @Body() requestBookDto: RequestBookDto,
     @UploadedFiles() files: Express.Multer.File[],
@@ -78,6 +42,7 @@ export class AuthorController {
     if (!coverImage) {
       throw new BadRequestException('Cover image is required.');
     }
+
     if (!pdfFile) {
       throw new BadRequestException('Book PDF is required.');
     }
@@ -99,5 +64,35 @@ export class AuthorController {
     @Param('authorId') authorId: string,
   ) {
     return this.authorService.getTotalCopiesDistributedPerBranch(authorId);
+  }
+
+  @Delete(':id')
+  @Roles('admin')
+  async deleteAuthor(@Param('id') id: string) {
+    const result = await this.authorService.deleteAuthor(id);
+    if (!result) {
+      throw new NotFoundException('Author not found or already deleted.');
+    }
+    return {
+      message: 'Author deleted successfully.',
+    };
+  }
+
+  @Get('profile/:id')
+  @Roles('admin', 'member', 'author')
+  async getAuthorProfileById(
+    @Param('id') authorId: string,
+    @Headers('accept-language') acceptLanguage: string,
+  ) {
+    const profile = await this.authorService.getAuthorProfileById(
+      authorId,
+      acceptLanguage,
+    );
+
+    if (!profile) {
+      throw new NotFoundException('Author not found.');
+    }
+
+    return profile;
   }
 }
