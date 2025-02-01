@@ -5,23 +5,15 @@ import {
   IsString,
   MinLength,
   ValidateNested,
+  IsDate,
 } from 'class-validator';
-
-class biLangObject {
-  @IsNotEmpty()
-  @IsString()
-  en: string;
-
-  @IsNotEmpty()
-  @IsString()
-  ar: string;
-}
+import { BiLangObject } from 'src/common/bilang-object.dto'; // Import BiLangObject
 
 export class CreateAuthorDto {
   @ValidateNested()
-  @Type(() => biLangObject)
+  @Type(() => BiLangObject)
   @IsNotEmpty()
-  name: biLangObject;
+  name: BiLangObject;
 
   @IsEmail()
   @IsNotEmpty()
@@ -33,10 +25,12 @@ export class CreateAuthorDto {
   password: string;
 
   @ValidateNested()
-  @Type(() => biLangObject)
+  @Type(() => BiLangObject)
   @IsNotEmpty()
-  biography: biLangObject;
+  biography: BiLangObject;
 
   @IsNotEmpty()
+  @IsDate()
+  @Type(() => Date)
   birthDate: Date;
 }

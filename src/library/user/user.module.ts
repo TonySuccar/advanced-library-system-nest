@@ -25,9 +25,6 @@ import { MailerService } from 'src/common/mailer.service';
   ],
   controllers: [UserController],
   providers: [UserService, TaskService, MailerService],
-  exports: [
-    UserService,
-    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-  ],
+  exports: [UserService, MongooseModule],
 })
 export class UserModule {}

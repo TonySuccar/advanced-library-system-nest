@@ -1,8 +1,18 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Book, BookDocument } from './schemas/book.schema';
 import { UpdateBookDto } from './dtos/update-book.dto';
+import {
+  BookRequest,
+  BookRequestDocument,
+} from '../author/schemas/bookrequest.schema';
+import { Review, ReviewDocument } from '../user/schemas/review.schema';
+import { Borrow, BorrowDocument } from '../user/schemas/borrow.schema';
+import {
+  BranchInventory,
+  BranchInventoryDocument,
+} from '../cms/schemas/branchInventory.schema';
 
 interface FetchBooksFilters {
   page: number;
@@ -18,6 +28,14 @@ interface FetchBooksFilters {
 export class BookService {
   constructor(
     @InjectModel(Book.name) private readonly bookModel: Model<BookDocument>,
+    @InjectModel(BookRequest.name)
+    private readonly bookRequestModel: Model<BookRequestDocument>,
+    @InjectModel(Review.name)
+    private readonly reviewModel: Model<ReviewDocument>,
+    @InjectModel(Borrow.name)
+    private readonly borrowModel: Model<BorrowDocument>,
+    @InjectModel(BranchInventory.name)
+    private readonly branchInventoryModel: Model<BranchInventoryDocument>,
   ) {}
 
   async fetchAllBooks(filters: FetchBooksFilters) {
@@ -97,12 +115,28 @@ export class BookService {
     return book.save();
   }
 
-  async deleteBookById(id: string): Promise<boolean> {
-    const result = await this.bookModel.findByIdAndDelete(id);
-    if (!result) {
-      return false;
+  async deleteBookById(bookId: string): Promise<boolean> {
+    const bookObjectId = new Types.ObjectId(bookId); // Ensure bookId is an ObjectId
+
+    // Step 1: Delete the book
+    const book = await this.bookModel.findByIdAndDelete(bookObjectId);
+    if (!book) {
+      throw new NotFoundException('Book not found.');
     }
-    return true;
+
+    // Step 2: Delete all book requests related to this book
+    await this.bookRequestModel.deleteMany({ bookId: bookObjectId });
+
+    // Step 3: Delete all reviews related to this book
+    await this.reviewModel.deleteMany({ bookId: bookObjectId });
+
+    // Step 4: Delete all borrow records related to this book
+    await this.borrowModel.deleteMany({ bookId: bookObjectId });
+
+    // Step 5: Delete all branch inventories related to this book
+    await this.branchInventoryModel.deleteMany({ bookId: bookObjectId });
+
+    return true; // Return success response
   }
 
   async getBooksPublishRate(): Promise<number> {

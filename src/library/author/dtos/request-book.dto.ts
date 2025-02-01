@@ -1,15 +1,6 @@
 import { IsNotEmpty, IsString, IsDate, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
-
-class BiLangObject {
-  @IsNotEmpty()
-  @IsString()
-  en: string; // English
-
-  @IsNotEmpty()
-  @IsString()
-  ar: string; // Arabic
-}
+import { BiLangObject } from 'src/common/bilang-object.dto';
 
 export class RequestBookDto {
   @ValidateNested()

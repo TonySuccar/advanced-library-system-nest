@@ -65,31 +65,25 @@ export class UserService {
 
     // Fetch branch inventory and book details using aggregation
     const branchInventory = await this.branchInventoryModel.aggregate([
-      {
-        $match: { _id: inventoryObjectId }, // Match the branch inventory by ObjectId
-      },
+      { $match: { _id: inventoryObjectId } },
       {
         $lookup: {
-          from: 'books', // Join with the 'books' collection
+          from: 'books',
           localField: 'bookId',
           foreignField: '_id',
           as: 'bookDetails',
         },
       },
-      {
-        $unwind: '$bookDetails', // Flatten the book details array
-      },
+      { $unwind: '$bookDetails' },
       {
         $lookup: {
-          from: 'authors', // Join with the 'authors' collection
+          from: 'authors',
           localField: 'bookDetails.authorId',
           foreignField: '_id',
           as: 'authorDetails',
         },
       },
-      {
-        $unwind: '$authorDetails', // Flatten the author details array
-      },
+      { $unwind: '$authorDetails' },
     ]);
 
     // Check if the branch inventory exists
@@ -120,17 +114,23 @@ export class UserService {
 
     // Create a new borrow record
     const borrowRecord = new this.borrowModel({
-      memberId: memberObjectId, // Use ObjectId for memberId
-      bookId: book._id, // Use ObjectId for bookId
-      branchId: inventory.branchId, // Use ObjectId for branchId
+      memberId: memberObjectId,
+      bookId: book._id,
+      branchId: inventory.branchId,
       borrowedAt,
       returnBy,
     });
-    await borrowRecord.save();
+
+    const savedBorrow = await borrowRecord.save();
 
     // Update branch inventory to decrement available copies
     await this.branchInventoryModel.findByIdAndUpdate(inventoryObjectId, {
-      $inc: { availableCopies: -1 }, // Decrement available copies
+      $inc: { availableCopies: -1 },
+    });
+
+    // Add borrow record ID to the member's borrow history array
+    await this.userModel.findByIdAndUpdate(memberObjectId, {
+      $push: { borrowHistory: savedBorrow._id },
     });
 
     // Notify the author via email
@@ -153,7 +153,7 @@ export class UserService {
 
     return {
       message: 'Book borrowed successfully! The author has been notified.',
-      borrowRecord,
+      borrowRecord: savedBorrow,
     };
   }
 
@@ -328,17 +328,38 @@ export class UserService {
   }
 
   async deleteMember(memberId: string): Promise<{ message: string }> {
+    // 1️⃣ Validate `memberId`
     if (!Types.ObjectId.isValid(memberId)) {
       throw new BadRequestException('Invalid Member ID.');
     }
-    const member = await this.userModel.findById(memberId);
+    const memberObjectId = new Types.ObjectId(memberId);
+
+    // 2️⃣ Check if the member exists
+    const member = await this.userModel.findById(memberObjectId);
     if (!member) {
       throw new NotFoundException('Member not found.');
     }
-    await this.userModel.findByIdAndDelete(memberId);
 
-    return { message: 'Member deleted successfully.' };
+    // 3️⃣ Delete all related borrow & review records
+    await Promise.all([
+      this.borrowModel.deleteMany({ memberId: memberObjectId }), // Delete borrow records
+      this.reviewModel.deleteMany({ memberId: memberObjectId }), // Delete reviews
+    ]);
+
+    // 4️⃣ Remove deleted reviews from other users' likedReviews
+    await this.userModel.updateMany(
+      { likedReviews: memberObjectId },
+      { $pull: { likedReviews: memberObjectId } },
+    );
+
+    // 5️⃣ Finally, delete the member
+    await this.userModel.findByIdAndDelete(memberObjectId);
+
+    return {
+      message: 'Member deleted successfully, along with related records.',
+    };
   }
+
   async getMembers(
     page: number = 1,
     limit: number = 10,

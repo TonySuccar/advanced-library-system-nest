@@ -4,15 +4,24 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Branch, BranchDocument } from './schemas/branch.schema';
 import { CreateBranchDto } from './dtos/create-branch.dto';
+import { Borrow, BorrowDocument } from '../user/schemas/borrow.schema';
+import {
+  BranchInventory,
+  BranchInventoryDocument,
+} from '../cms/schemas/branchInventory.schema';
 
 @Injectable()
 export class BranchService {
   constructor(
     @InjectModel(Branch.name)
     private readonly branchModel: Model<BranchDocument>,
+    @InjectModel(Borrow.name)
+    private readonly borrowModel: Model<BorrowDocument>,
+    @InjectModel(BranchInventory.name)
+    private readonly branchInventoryModel: Model<BranchInventoryDocument>,
   ) {}
 
   // Create a new branch
@@ -58,10 +67,25 @@ export class BranchService {
 
   // Delete a branch by ID
   async remove(id: string): Promise<{ message: string }> {
-    const deletedBranch = await this.branchModel.findByIdAndDelete(id).exec();
+    // Convert string ID to ObjectId
+    const branchObjectId = new Types.ObjectId(id);
+
+    // Step 1: Delete the branch itself
+    const deletedBranch = await this.branchModel
+      .findByIdAndDelete(branchObjectId)
+      .exec();
     if (!deletedBranch) {
       throw new NotFoundException('Branch not found.');
     }
-    return { message: 'Branch deleted successfully.' };
+
+    // Step 2: Delete all branch inventory records related to the branch
+    await this.branchInventoryModel
+      .deleteMany({ branchId: branchObjectId })
+      .exec();
+
+    // Step 3: Delete all borrow records related to the branch
+    await this.borrowModel.deleteMany({ branchId: branchObjectId }).exec();
+
+    return { message: 'Branch and related records deleted successfully.' };
   }
 }

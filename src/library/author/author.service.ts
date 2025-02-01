@@ -13,6 +13,10 @@ import {
   BranchInventory,
   BranchInventoryDocument,
 } from '../cms/schemas/branchInventory.schema';
+import { Book, BookDocument } from '../book/schemas/book.schema';
+import { Review, ReviewDocument } from '../user/schemas/review.schema';
+import { Borrow, BorrowDocument } from '../user/schemas/borrow.schema';
+import { User, UserDocument } from '../user/schemas/user.schema';
 
 @Injectable()
 export class AuthorService {
@@ -21,8 +25,16 @@ export class AuthorService {
     private readonly branchInventoryModel: Model<BranchInventoryDocument>,
     @InjectModel(Author.name)
     private readonly authorModel: Model<AuthorDocument>,
+    @InjectModel(Review.name)
+    private readonly reviewModel: Model<ReviewDocument>,
+    @InjectModel(Borrow.name)
+    private readonly borrowModel: Model<BorrowDocument>,
     @InjectModel(BookRequest.name)
     private readonly bookRequestModel: Model<BookRequestDocument>,
+    @InjectModel(Book.name)
+    private readonly bookModel: Model<BookDocument>,
+    @InjectModel(User.name)
+    private readonly userModel: Model<UserDocument>,
     private readonly mailerService: MailerService,
   ) {}
 
@@ -135,18 +147,78 @@ export class AuthorService {
   }
 
   async deleteAuthor(authorId: string): Promise<boolean> {
+    // 1️⃣ Ensure `authorId` is a valid ObjectId
     if (!Types.ObjectId.isValid(authorId)) {
-      throw new NotFoundException('Invalid author ID.');
+      throw new BadRequestException('Invalid author ID.');
     }
+    const authorObjectId = new Types.ObjectId(authorId);
 
-    const author = await this.authorModel.findById(authorId);
+    // 2️⃣ Check if the author exists
+    const author = await this.authorModel.findById(authorObjectId);
     if (!author) {
       throw new NotFoundException('Author not found.');
     }
 
-    const result = await this.authorModel.findByIdAndDelete(authorId);
+    // 3️⃣ Delete related book requests
+    await this.bookRequestModel.deleteMany({ authorId: authorObjectId });
 
-    return result !== null;
+    // 4️⃣ Find all books written by this author
+    const books = await this.bookModel.find({ authorId: authorObjectId });
+
+    if (books.length > 0) {
+      const bookIds = books
+        .map((book) =>
+          book._id instanceof Types.ObjectId
+            ? book._id
+            : new Types.ObjectId(book._id.toString()),
+        ) // ✅ Fix: Ensure _id is ObjectId
+        .filter((id) => Types.ObjectId.isValid(id.toString())); // ✅ Convert to string before checking validity
+
+      // 5️⃣ Find all reviews and borrows related to these books
+      const reviewIds = await this.reviewModel
+        .find({ bookId: { $in: bookIds } })
+        .distinct('_id');
+      const borrowIds = await this.borrowModel
+        .find({ bookId: { $in: bookIds } })
+        .distinct('_id');
+
+      const reviewObjectIds = reviewIds
+        .map((id) =>
+          id instanceof Types.ObjectId ? id : new Types.ObjectId(id.toString()),
+        ) // ✅ Fix: Convert to ObjectId
+        .filter((id) => Types.ObjectId.isValid(id.toString())); // ✅ Convert to string before checking validity
+
+      const borrowObjectIds = borrowIds
+        .map((id) =>
+          id instanceof Types.ObjectId ? id : new Types.ObjectId(id.toString()),
+        ) // ✅ Fix: Convert to ObjectId
+        .filter((id) => Types.ObjectId.isValid(id.toString())); // ✅ Convert to string before checking validity
+
+      // 6️⃣ Remove reviews & borrows from user records
+      await Promise.all([
+        this.userModel.updateMany(
+          { likedReviews: { $in: reviewObjectIds } },
+          { $pull: { likedReviews: { $in: reviewObjectIds } } },
+        ),
+        this.userModel.updateMany(
+          { borrowHistory: { $in: borrowObjectIds } },
+          { $pull: { borrowHistory: { $in: borrowObjectIds } } },
+        ),
+      ]);
+
+      // 7️⃣ Delete related records
+      await Promise.all([
+        this.reviewModel.deleteMany({ bookId: { $in: bookIds } }), // Delete reviews
+        this.borrowModel.deleteMany({ bookId: { $in: bookIds } }), // Delete borrow records
+        this.branchInventoryModel.deleteMany({ bookId: { $in: bookIds } }), // Remove from branch inventory
+        this.bookModel.deleteMany({ authorId: authorObjectId }), // Delete books last
+      ]);
+    }
+
+    // 8️⃣ Finally, delete the author
+    await this.authorModel.findByIdAndDelete(authorObjectId);
+
+    return true; // Return success
   }
 
   async getAuthorProfileById(authorId: string, language: string) {
