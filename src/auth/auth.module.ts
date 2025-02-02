@@ -10,6 +10,7 @@ import { JwtStrategy } from './jwt.strategy';
 import { MailerService } from '../common/mailer.service';
 import { CMS, CMSSchema } from 'src/library/cms/schemas/cms.schema';
 import { Author, AuthorSchema } from 'src/library/author/schemas/author.schema';
+import { WebSocketAuthGuard } from './guards/ws.guard';
 
 @Module({
   imports: [
@@ -26,7 +27,7 @@ import { Author, AuthorSchema } from 'src/library/author/schemas/author.schema';
     ]),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, MailerService],
-  exports: [AuthService, JwtModule],
+  providers: [AuthService, JwtStrategy, MailerService, WebSocketAuthGuard],
+  exports: [AuthService, JwtModule, WebSocketAuthGuard],
 })
 export class AuthModule {}

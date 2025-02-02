@@ -13,6 +13,7 @@ import { BranchModule } from './library/branch/branch.module';
 import { AuthorModule } from './library/author/author.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { DashboardModule } from './library/Dashboard/dashboard.module';
+import { ChatModule } from './library/chat/chat.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { DashboardModule } from './library/Dashboard/dashboard.module';
     BranchModule,
     AuthorModule,
     DashboardModule,
+    ChatModule,
   ],
   providers: [],
   controllers: [],
