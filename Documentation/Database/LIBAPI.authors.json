@@ -1,57 +1,180 @@
 [{
   "_id": {
-    "$oid": "678d14ea6c6c0c649a789a82"
+    "$oid": "679a1f280681c4296662b28d"
   },
   "name": {
-    "en": "John Doe",
-    "ar": "جون دو"
+    "en": "author1",
+    "ar": "كاتب"
   },
-  "email": "johndoe@example.com",
-  "password": "$2a$10$t23ZNlue6f3H2oBdpNAnqu2HJUTmJR0KXeSaMiiW66e6dyB2IOdCW",
+  "email": "author1@example.com",
+  "password": "$2a$10$k6T9g.tEAlr1wSlIsUlZTOlxSSY/eKm0CjXQumXBctRQTYmHjvyYG",
   "biography": {
-    "en": "\tJohn is an accomplished author from the US.",
-    "ar": "جون كاتب بارع من الولايات المتحدة."
+    "en": "author1 bio",
+    "ar": "كاتب"
   },
-  "profileImageUrl": "/uploads/profile-images/aa809ff2-e2a0-46ee-905f-47a2885061f5.JPEG",
+  "profileImageUrl": "/uploads/profile-images/7b1caf6a-7278-44d7-8ea1-1fa71ac2c7fc.JPEG",
   "birthDate": {
-    "$date": "1990-01-01T00:00:00.000Z"
+    "$date": "1990-01-08T00:00:00.000Z"
   },
   "role": "author",
   "bookRequestIds": [
     {
-      "$oid": "678d3b286afeb1fd7882f434"
+      "$oid": "679a21a95c8a59dbc507db83"
     },
     {
-      "$oid": "678d57a907bebad06b49060d"
-    },
-    {
-      "$oid": "678d57da07bebad06b490616"
-    },
-    {
-      "$oid": "678d5c5d07bebad06b490643"
-    },
-    {
-      "$oid": "678d5e100ad00821d0e6a14d"
-    },
-    {
-      "$oid": "678d5e200ad00821d0e6a154"
-    },
-    {
-      "$oid": "678d9275de8fb0e54c5ed6ce"
-    },
-    {
-      "$oid": "678d941c93cadebda1668fbd"
-    },
-    {
-      "$oid": "678e5596ef01716557bfbcad"
+      "$oid": "679a22a55c8a59dbc507db95"
     }
   ],
-  "averageApprovalTime": 33185.0335,
+  "averageApprovalTime": 130.863,
   "createdAt": {
-    "$date": "2025-01-19T15:06:20.666Z"
+    "$date": "2025-01-29T12:29:30.350Z"
   },
   "updatedAt": {
-    "$date": "2025-01-20T14:32:18.330Z"
+    "$date": "2025-01-29T12:46:09.415Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a1f4d0681c4296662b291"
+  },
+  "name": {
+    "en": "author2",
+    "ar": "كاتب"
+  },
+  "email": "author2@example.com",
+  "password": "$2a$10$/U637cH3gKinnW1LW/LIDO6Ncta4/nUhJ4spgglCcp5722Gpb.cfm",
+  "biography": {
+    "en": "author2 bio",
+    "ar": "كاتب"
+  },
+  "profileImageUrl": "/uploads/profile-images/460ef4a6-38c8-4306-b514-1b8fc66efdbc.JPEG",
+  "birthDate": {
+    "$date": "1990-01-08T00:00:00.000Z"
+  },
+  "role": "author",
+  "bookRequestIds": [
+    {
+      "$oid": "679a328b5c8a59dbc507dba6"
+    },
+    {
+      "$oid": "679a33185c8a59dbc507dbab"
+    }
+  ],
+  "averageApprovalTime": 1018.328,
+  "createdAt": {
+    "$date": "2025-01-29T12:30:07.737Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:11:31.704Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a1f6a0681c4296662b295"
+  },
+  "name": {
+    "en": "author3",
+    "ar": "كاتب"
+  },
+  "email": "author3@example.com",
+  "password": "$2a$10$iSjL6YW3mfWOOCctT9zOze9VWaxg9Iajn/JCtpxb9Sg32S0eG6md6",
+  "biography": {
+    "en": "author3 bio",
+    "ar": "كاتب"
+  },
+  "profileImageUrl": "/uploads/profile-images/a4fb3991-9e33-455a-87fa-828a901a2d86.JPEG",
+  "birthDate": {
+    "$date": "1990-01-08T00:00:00.000Z"
+  },
+  "role": "author",
+  "bookRequestIds": [
+    {
+      "$oid": "679a34015c8a59dbc507dbb1"
+    },
+    {
+      "$oid": "679a345d5c8a59dbc507dbb6"
+    }
+  ],
+  "averageApprovalTime": 786.7015,
+  "createdAt": {
+    "$date": "2025-01-29T12:30:37.002Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:12:28.975Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a1f7c0681c4296662b299"
+  },
+  "name": {
+    "en": "author4",
+    "ar": "كاتب"
+  },
+  "email": "author4@example.com",
+  "password": "$2a$10$xJMjuwb.bTFCuwFKtlG4sOjn0//GdwR3EkiKxoae3kVZUBxN9S9Ni",
+  "biography": {
+    "en": "author4 bio",
+    "ar": "كاتب"
+  },
+  "profileImageUrl": "/uploads/profile-images/4a950671-1efc-4fac-bffd-ac0a41dd719d.JPEG",
+  "birthDate": {
+    "$date": "1990-01-08T00:00:00.000Z"
+  },
+  "role": "author",
+  "bookRequestIds": [
+    {
+      "$oid": "679a34b25c8a59dbc507dbbc"
+    },
+    {
+      "$oid": "679a350f5c8a59dbc507dbc1"
+    }
+  ],
+  "averageApprovalTime": 590.741,
+  "createdAt": {
+    "$date": "2025-01-29T12:30:55.062Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:12:47.042Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a1f8a0681c4296662b29d"
+  },
+  "name": {
+    "en": "author5",
+    "ar": "كاتب"
+  },
+  "email": "author5@example.com",
+  "password": "$2a$10$n7oVVzqymYvgGj9.KuSxVul5BrqrQwE73fuyJw4CkYy/SlvRRly8.",
+  "biography": {
+    "en": "author5 bio",
+    "ar": "كاتب"
+  },
+  "profileImageUrl": "/uploads/profile-images/06ef06bd-7d3f-4f10-98d4-fcc8f7fa7ca4.JPEG",
+  "birthDate": {
+    "$date": "1990-01-08T00:00:00.000Z"
+  },
+  "role": "author",
+  "bookRequestIds": [
+    {
+      "$oid": "679a357c5c8a59dbc507dbc7"
+    },
+    {
+      "$oid": "679a35a35c8a59dbc507dbcc"
+    }
+  ],
+  "averageApprovalTime": 500.827,
+  "createdAt": {
+    "$date": "2025-01-29T12:31:10.108Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:13:05.527Z"
   },
   "__v": 0
 }]

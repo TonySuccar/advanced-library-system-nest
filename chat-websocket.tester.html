@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Test</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #messages {
+        width: 50%;
+        margin: auto;
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+      input,
+      button {
+        margin-top: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📚 Book Discussion Chat</h1>
+
+    <label>Enter JWT Token:</label>
+    <input type="text" id="jwtToken" placeholder="Enter JWT Token" />
+    <br />
+
+    <label>Enter Book ID:</label>
+    <input type="text" id="bookId" placeholder="Enter Book ID" />
+    <button onclick="connectSocket()">Connect & Join Chat</button>
+
+    <div id="chat" style="display: none">
+      <h2>Chat Room</h2>
+      <div id="messages"></div>
+
+      <input type="text" id="messageInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+      let socket; // Global variable to store the socket connection
+
+      function connectSocket() {
+        const jwtToken = document.getElementById("jwtToken").value.trim();
+        const bookId = document.getElementById("bookId").value.trim();
+
+        if (!jwtToken) {
+          alert("Please enter a valid JWT token.");
+          return;
+        }
+
+        if (!bookId) {
+          alert("Please enter a book ID.");
+          return;
+        }
+
+        // Store JWT token in localStorage for persistence
+        localStorage.setItem("jwtToken", jwtToken);
+
+        // Initialize WebSocket connection with the JWT token
+        socket = io("http://localhost:3000", {
+          extraHeaders: {
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        });
+
+        // Join the room after the socket connection is established
+        socket.on("connect", () => {
+          console.log("✅ Connected to WebSocket Server");
+          joinRoom(bookId);
+        });
+
+        // Handle WebSocket errors
+        socket.on("error", (data) => {
+          alert("⚠️ Error: " + data.message);
+        });
+
+        socket.on("disconnect", () => {
+          console.log("❌ Disconnected from WebSocket Server");
+        });
+      }
+
+      function joinRoom(bookId) {
+        socket.emit("joinRoom", bookId);
+
+        socket.on("chatHistory", (messages) => {
+          document.getElementById("chat").style.display = "block";
+          const messagesDiv = document.getElementById("messages");
+          messagesDiv.innerHTML = "";
+          messages.forEach((msg) => {
+            messagesDiv.innerHTML += `<p><strong>${msg.userId.name}:</strong> ${msg.message}</p>`;
+          });
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        });
+
+        socket.on("userJoined", (data) => {
+          const messagesDiv = document.getElementById("messages");
+          messagesDiv.innerHTML += `<p><em>📢 ${data.userName} has joined the chat.</em></p>`;
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        });
+
+        socket.on("newMessage", (msg) => {
+          const messagesDiv = document.getElementById("messages");
+          messagesDiv.innerHTML += `<p><strong>${msg.userName}:</strong> ${msg.message}</p>`;
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        });
+      }
+
+      function sendMessage() {
+        const bookId = document.getElementById("bookId").value.trim();
+        const message = document.getElementById("messageInput").value.trim();
+
+        if (!message) {
+          alert("Please enter a message.");
+          return;
+        }
+
+        socket.emit("sendMessage", { bookId, message });
+        document.getElementById("messageInput").value = "";
+      }
+
+      // Load JWT token from localStorage if available
+      window.onload = function () {
+        const savedToken = localStorage.getItem("jwtToken");
+        if (savedToken) {
+          document.getElementById("jwtToken").value = savedToken;
+        }
+      };
+    </script>
+  </body>
+</html>

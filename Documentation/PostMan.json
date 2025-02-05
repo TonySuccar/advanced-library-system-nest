@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"user@example.com\",\n  \"name\":\"tony\"\n\n}",
+							"raw": "{\n  \"email\": \"user6@example.com\",\n  \"name\":\"user6\"\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -111,7 +111,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"user@example.com\",\n    \"otp\": \"725180\",\n    \"password\": \"12345678910t\",\n    \"age\": 13\n}",
+							"raw": "{\n    \"email\": \"user6@example.com\",\n    \"otp\": \"281371\",\n    \"password\": \"password\",\n    \"age\": 51\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -301,7 +301,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"12345678910t\"\n}",
+							"raw": "{\n    \"email\": \"user5@example.com\",\n    \"password\": \"password\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -396,7 +396,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"email\":\"johndoe@example.com\",\n\"password\":\"newpass123\"}",
+							"raw": "{\"email\":\"author6@example.com\",\n\"password\":\"password\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -497,7 +497,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJjbXMiLCJpYXQiOjE3MzcyNDM1MjEsImV4cCI6MTczNzI0NzEyMX0.fbBJCBfbkzqiR2VWfGCh-HABpq8PaYH81T0MycwRSc4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMzNTQ1OSwiZXhwIjoxNzM3MzM5MDU5fQ.ae1ZfcD7PTvn_ab1ewJp8ifcqbffQdsxxnDMTvh2ewA",
 									"type": "string"
 								}
 							]
@@ -506,7 +506,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"tony@succar.com\",\n    \"name\":\"tony\",\n    \"password\": \"password12345\",\n    \"role\":\"admin\"\n}",
+							"raw": "{\n    \"email\": \"tonyy@succar.com\",\n    \"name\":\"tony\",\n    \"password\": \"password12345\",\n    \"role\":\"intern\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -663,7 +663,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI4NDk4NSwiZXhwIjoxNzM3Mjg4NTg1fQ.1KCmgjWhOrOEINjsHqmRwu4K9Mew0G1m2aWM_b8YxRk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE2ODYxNiwiZXhwIjoxNzM4MTcyMjE2fQ.cZnm18oRjDHTPjVGqdgXN3lno9jq-hftqdxCl4pfZQ0",
 									"type": "string"
 								}
 							]
@@ -674,38 +674,38 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "name.en",
-									"value": "John Doe",
+									"key": "name[en]",
+									"value": "author6",
 									"type": "text"
 								},
 								{
-									"key": "name.ar",
-									"value": "جون دو",
+									"key": "name[ar]",
+									"value": "كاتب",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "johndoe@example.com",
+									"value": "author6@example.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "password12345678910",
+									"value": "password",
 									"type": "text"
 								},
 								{
-									"key": "biography",
-									"value": "John is an author from the US.",
+									"key": "biography[en]",
+									"value": "author6 bio",
 									"type": "text"
 								},
 								{
-									"key": "biography.ar",
-									"value": "جون كاتب من الولايات المتحدة.",
+									"key": "biography[ar]",
+									"value": "كاتب",
 									"type": "text"
 								},
 								{
 									"key": "birthDate",
-									"value": "1990-01-01",
+									"value": "1990-01-08",
 									"type": "text"
 								},
 								{
@@ -843,7 +843,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI4OTU1NiwiZXhwIjoxNzM3MjkzMTU2fQ.51DB2RESlY-g9t-nblZT2TmhJB8-Ngc2PMy77Mp8vac",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5OTg4MCwiZXhwIjoxNzM3MzAzNDgwfQ.uqGljNP87vptxEI7-mmYVWhDlcZB0zvf0r3hkAJ2NRI",
 									"type": "string"
 								}
 							]
@@ -970,7 +970,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMwOTA0MiwiZXhwIjoxNzM3MzEyNjQyfQ.vdVKBSYdeBEtpE0f-SjUd0Z_tU7dcBDKFKLCsdlMWm8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMzMjgzNSwiZXhwIjoxNzM3MzM2NDM1fQ.sn7YW2Jgrt7xDRlTAwH3RHHS9nraswnqJhhvctwsDmg",
 									"type": "string"
 								}
 							]
@@ -1055,7 +1055,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMwOTA0MiwiZXhwIjoxNzM3MzEyNjQyfQ.vdVKBSYdeBEtpE0f-SjUd0Z_tU7dcBDKFKLCsdlMWm8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE3MTY2NiwiZXhwIjoxNzM4MTc1MjY2fQ.uJcXsAKp0KhK_cU-L05LiWL3xKRDED_2WVbJ3erV6l0",
 									"type": "string"
 								}
 							]
@@ -1063,7 +1063,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/cms/requests/678d3b286afeb1fd7882f434/accept",
+							"raw": "http://localhost:3000/cms/requests/679a64e5b47774be64c1cce0/accept",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1072,7 +1072,7 @@
 							"path": [
 								"cms",
 								"requests",
-								"678d3b286afeb1fd7882f434",
+								"679a64e5b47774be64c1cce0",
 								"accept"
 							]
 						}
@@ -1144,7 +1144,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMxODEzMCwiZXhwIjoxNzM3MzIxNzMwfQ.M6MFZgf_4Tid_pSRuaA7d3fle2GHFhMyIdQ9Efj6lTc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE1OTcwMSwiZXhwIjoxNzM4MTYzMzAxfQ.2pDGnY1E0z6zLbGcQOvSWZUOB-SGQH7XCRQZ-Xhmmuc",
 									"type": "string"
 								}
 							]
@@ -1152,7 +1152,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/cms/requests/678d5e100ad00821d0e6a14d/reject",
+							"raw": "http://localhost:3000/cms/requests/679a35a35c8a59dbc507dbcc/reject",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1161,7 +1161,7 @@
 							"path": [
 								"cms",
 								"requests",
-								"678d5e100ad00821d0e6a14d",
+								"679a35a35c8a59dbc507dbcc",
 								"reject"
 							]
 						}
@@ -1233,7 +1233,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMxODEzMCwiZXhwIjoxNzM3MzIxNzMwfQ.M6MFZgf_4Tid_pSRuaA7d3fle2GHFhMyIdQ9Efj6lTc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE3MTY2NiwiZXhwIjoxNzM4MTc1MjY2fQ.uJcXsAKp0KhK_cU-L05LiWL3xKRDED_2WVbJ3erV6l0",
 									"type": "string"
 								}
 							]
@@ -1242,7 +1242,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"branchId\": \"678d0514980c7f6642a83ca7\",\n  \"bookId\": \"678d5f4ea04a01daa9f28d94\",\n  \"totalCopies\": 20\n}\n",
+							"raw": "{\n  \"branchId\": \"679a3d764f69d23a6835d097\",\n  \"bookId\": \"679a6521b47774be64c1cce7\",\n  \"totalCopies\": 20\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1341,7 +1341,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE2MTEwNSwiZXhwIjoxNzM4MTY0NzA1fQ.RJ5LW4xgGxaz7co4KQ0T1ZUc3m_nf3FVV_dSpClwybw",
 									"type": "string"
 								}
 							]
@@ -1350,7 +1350,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"branchName\": \"second Library\",\n  \"location\": \"country\"\n}\n",
+							"raw": "{\n  \"branchName\": \"branch3\",\n  \"location\": \"location3\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1713,7 +1713,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzI5MzU2OSwiZXhwIjoxNzM3Mjk3MTY5fQ.S1Oq5YcSAPcHgMs4Xy0D0eDPa2hq_kvvIAG_pKVXRrk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE2MDMyNCwiZXhwIjoxNzM4MTYzOTI0fQ.mdYyQU4CKP8HfhWNgi1fKhC5DOz3w8eW5niVa15k2Ro",
 									"type": "string"
 								}
 							]
@@ -1721,7 +1721,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/branch/678cff11980c7f6642a83ca3",
+							"raw": "http://localhost:3000/branch/679a3c644f69d23a6835d087",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1729,7 +1729,7 @@
 							"port": "3000",
 							"path": [
 								"branch",
-								"678cff11980c7f6642a83ca3"
+								"679a3c644f69d23a6835d087"
 							]
 						}
 					},
@@ -1798,8 +1798,90 @@
 				{
 					"name": "Book-request",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzlhNjRhOGI0Nzc3NGJlNjRjMWNjZGEiLCJlbWFpbCI6ImF1dGhvcjZAZXhhbXBsZS5jb20iLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzM4MTcxNTc5LCJleHAiOjE3MzgxNzUxNzl9.u-5F1vwCeD8xjUPSHMOAkICCNPOgZ98JBAVjbe8oJFs",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title[en]",
+									"value": "book11",
+									"type": "text"
+								},
+								{
+									"key": "title[ar]",
+									"value": "كتاب",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "ISBN 978-0-599-598768-12",
+									"type": "text"
+								},
+								{
+									"key": "genre",
+									"value": "Romance",
+									"type": "text"
+								},
+								{
+									"key": "description[en]",
+									"value": "book11 desc",
+									"type": "text"
+								},
+								{
+									"key": "description[ar]",
+									"value": "كتاب",
+									"type": "text"
+								},
+								{
+									"key": "isOpenToReviews",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "minAge",
+									"value": "21",
+									"type": "text"
+								},
+								{
+									"key": "publishedDate",
+									"value": "2025-01-01",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/succar/Desktop/Screen Shot 2024-12-11 at 2.16.36 AM.png"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/succar/Desktop/dummy-pdf_2 2.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/author/request-book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"author",
+								"request-book"
+							]
+						}
 					},
 					"response": [
 						{
@@ -1921,12 +2003,29 @@
 				{
 					"name": "Total-copies-perbranch",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMyMTk5MCwiZXhwIjoxNzM3MzI1NTkwfQ.q2Obzy8hBf1MQHYMTjIA8uGP2e4Jjh2slkhKRnf1GXk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "Total-copies-perbranch",
+							"raw": "http://localhost:3000/author/678d14ea6c6c0c649a789a82/total-copies",
+							"protocol": "http",
 							"host": [
-								"Total-copies-perbranch"
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"author",
+								"678d14ea6c6c0c649a789a82",
+								"total-copies"
 							]
 						}
 					},
@@ -1996,7 +2095,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzM4NTI1MiwiZXhwIjoxNzM3Mzg4ODUyfQ.bVcaXeDn7fBsOTDLcLPRpdWOS2WQLYx2iHFhtq58-c0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE3MTgxOSwiZXhwIjoxNzM4MTc1NDE5fQ.B44Jdvq4ZZlDoV25V1bU6S2PjIq67Oa7qM6RMrtMAEs",
 									"type": "string"
 								}
 							]
@@ -2004,7 +2103,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/author/678e677eaff80ff9f169ad0c",
+							"raw": "http://localhost:3000/author/679a64a8b47774be64c1ccda",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2012,7 +2111,7 @@
 							"port": "3000",
 							"path": [
 								"author",
-								"678e677eaff80ff9f169ad0c"
+								"679a64a8b47774be64c1ccda"
 							]
 						}
 					},
@@ -2270,7 +2369,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzI1MjQwLCJleHAiOjE3MzczMjg4NDB9.ApBiYhtUBBxKkDMP7srnYJIhkCOSv0eTxszkBTAr5xQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzlhNmI0Yjc1NGIxYmQ0YzgwZTJhMWUiLCJlbWFpbCI6InVzZXI2QGV4YW1wbGUuY29tIiwicm9sZSI6Im1lbWJlciIsImlhdCI6MTczODE3MzM4MiwiZXhwIjoxNzM4MTc2OTgyfQ.Z6jKgJYC4aCRoUNM1PZiYXcZkNRnhy1FCUk8-lyWrsg",
 									"type": "string"
 								}
 							]
@@ -2287,7 +2386,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/borrow-book/678d8187918741b393b3d46e",
+							"raw": "http://localhost:3000/user/borrow-book/679a3e104f69d23a6835d09c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2296,7 +2395,7 @@
 							"path": [
 								"user",
 								"borrow-book",
-								"678d8187918741b393b3d46e"
+								"679a3e104f69d23a6835d09c"
 							]
 						}
 					},
@@ -2460,15 +2559,24 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzI5Mzk1LCJleHAiOjE3MzczMzI5OTV9.BK2X7pyUqDBK2jRAT6ovpMEKNRUTHBCF7SOnz6QBtdY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzlhMTk5MmI2NmMzODUyMTc4YmI4ZTMiLCJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwicm9sZSI6Im1lbWJlciIsImlhdCI6MTczODE2NDQ2MywiZXhwIjoxNzM4MTY4MDYzfQ.uzU1-RJ-GOI7KefVFve_wwX_TnPV1wRmaZV1WWIWaLE",
 									"type": "string"
 								}
 							]
 						},
 						"method": "PATCH",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"feedback\": \"Great book! Really enjoyed it.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/user/return/678d824faf354476f5f7044f",
+							"raw": "http://localhost:3000/user/return/679a458325ee27805d9e76b9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2477,7 +2585,7 @@
 							"path": [
 								"user",
 								"return",
-								"678d824faf354476f5f7044f"
+								"679a458325ee27805d9e76b9"
 							]
 						}
 					},
@@ -2556,7 +2664,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzMyMDg5LCJleHAiOjE3MzczMzU2ODl9.78H6gtwyjVqtB0CuadLIC7DgPX27uC_8HXvU11RPdXw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzlhNmI0Yjc1NGIxYmQ0YzgwZTJhMWUiLCJlbWFpbCI6InVzZXI2QGV4YW1wbGUuY29tIiwicm9sZSI6Im1lbWJlciIsImlhdCI6MTczODE3MzM4MiwiZXhwIjoxNzM4MTc2OTgyfQ.Z6jKgJYC4aCRoUNM1PZiYXcZkNRnhy1FCUk8-lyWrsg",
 									"type": "string"
 								}
 							]
@@ -2573,7 +2681,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/review/678d5f4ea04a01daa9f28d94",
+							"raw": "http://localhost:3000/user/review/679a22445c8a59dbc507db8c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2582,7 +2690,7 @@
 							"path": [
 								"user",
 								"review",
-								"678d5f4ea04a01daa9f28d94"
+								"679a22445c8a59dbc507db8c"
 							]
 						}
 					},
@@ -2661,7 +2769,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzMzNjg0LCJleHAiOjE3MzczMzcyODR9.66xMwm8VfAOAXmKqEPlgA380UXxWT1rwg8fm-IGa4Q8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM4MTUyMDM4LCJleHAiOjE3MzgxNTU2Mzh9.8dzxEWukyYkZH4HZt9pB4sICEL2FoGhplSEtvv6KK3M",
 									"type": "string"
 								}
 							]
@@ -2991,7 +3099,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzQwNTI2NywiZXhwIjoxNzM3NDA4ODY3fQ.Ekfvq6eDifxtbXroJ4mQToJy9K1bBpviq5t5K5fIpEc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczODE3MzQ4NCwiZXhwIjoxNzM4MTc3MDg0fQ.0NhrD_mrvyM3K3urkky4MZsKSU2_tXiRnGsZRg-bQ3Y",
 									"type": "string"
 								}
 							]
@@ -2999,7 +3107,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/user/678eb31ddb7efe8e4b7aa1ec",
+							"raw": "http://localhost:3000/user/679a6b4b754b1bd4c80e2a1e",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3007,7 +3115,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"678eb31ddb7efe8e4b7aa1ec"
+								"679a6b4b754b1bd4c80e2a1e"
 							]
 						}
 					},
@@ -3159,6 +3267,16 @@
 				{
 					"name": "View-Dashboard",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiYzA3YmY3YjY0YWEwMjU0NjQ0MmQiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNzMzNTQ1OSwiZXhwIjoxNzM3MzM5MDU5fQ.ae1ZfcD7PTvn_ab1ewJp8ifcqbffQdsxxnDMTvh2ewA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -3358,10 +3476,20 @@
 				{
 					"name": "Fetch-books",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzM4MjYyLCJleHAiOjE3MzczNDE4NjJ9.bRAcfSFg44EnSCbGtopJaHFk-Qr7atdR4bJFWbrr5Sg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/books?page=1&limit=5&sort=createdAt&order=desc&genre=fiction&search=harry",
+							"raw": "http://localhost:3000/books?page=1&limit=5&sort=createdAt&order=desc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3389,11 +3517,13 @@
 								},
 								{
 									"key": "genre",
-									"value": "fiction"
+									"value": "fiction",
+									"disabled": true
 								},
 								{
 									"key": "search",
-									"value": "harry"
+									"value": "",
+									"disabled": true
 								}
 							]
 						}
@@ -3485,8 +3615,30 @@
 				{
 					"name": "getbook-byid",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzhiY2MxZjRkOTZjMTE2ODhhZTllNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNzM3MzM4MjYyLCJleHAiOjE3MzczNDE4NjJ9.bRAcfSFg44EnSCbGtopJaHFk-Qr7atdR4bJFWbrr5Sg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/books/678d5f4ea04a01daa9f28d94",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"678d5f4ea04a01daa9f28d94"
+							]
+						}
 					},
 					"response": [
 						{

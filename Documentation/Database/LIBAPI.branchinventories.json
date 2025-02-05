@@ -1,21 +1,441 @@
 [{
   "_id": {
-    "$oid": "678d8187918741b393b3d46e"
+    "$oid": "679a3e104f69d23a6835d09c"
   },
   "branchId": {
-    "$oid": "678d0514980c7f6642a83ca7"
+    "$oid": "679a3d674f69d23a6835d08f"
   },
   "bookId": {
-    "$oid": "678e5e7137ef6c8e11a46e10"
+    "$oid": "679a22445c8a59dbc507db8c"
   },
   "totalCopies": 20,
   "borrowableDays": 7,
-  "availableCopies": 18,
+  "availableCopies": 19,
   "createdAt": {
-    "$date": "2025-01-19T22:49:43.933Z"
+    "$date": "2025-01-29T14:41:20.989Z"
   },
   "updatedAt": {
-    "$date": "2025-01-20T21:23:31.679Z"
+    "$date": "2025-01-29T17:57:32.493Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3e5b4f69d23a6835d0a0"
+  },
+  "branchId": {
+    "$oid": "679a3d674f69d23a6835d08f"
+  },
+  "bookId": {
+    "$oid": "679a23115c8a59dbc507db9d"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 17,
+  "createdAt": {
+    "$date": "2025-01-29T14:42:35.207Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T15:13:07.344Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3e674f69d23a6835d0a4"
+  },
+  "branchId": {
+    "$oid": "679a3d674f69d23a6835d08f"
+  },
+  "bookId": {
+    "$oid": "679a37135c8a59dbc507dbde"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:42:47.052Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:42:47.052Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3e774f69d23a6835d0a8"
+  },
+  "branchId": {
+    "$oid": "679a3d674f69d23a6835d08f"
+  },
+  "bookId": {
+    "$oid": "679a37385c8a59dbc507dbe6"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:43:03.719Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:43:03.719Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3e854f69d23a6835d0ac"
+  },
+  "branchId": {
+    "$oid": "679a3d674f69d23a6835d08f"
+  },
+  "bookId": {
+    "$oid": "679a374c5c8a59dbc507dbee"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:43:17.591Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:43:17.591Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3e984f69d23a6835d0b0"
+  },
+  "branchId": {
+    "$oid": "679a3d674f69d23a6835d08f"
+  },
+  "bookId": {
+    "$oid": "679a375e5c8a59dbc507dbf6"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:43:36.602Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:43:36.602Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3eab4f69d23a6835d0b4"
+  },
+  "branchId": {
+    "$oid": "679a3d674f69d23a6835d08f"
+  },
+  "bookId": {
+    "$oid": "679a37715c8a59dbc507dbfe"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:43:55.266Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:43:55.266Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f254f69d23a6835d0b8"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a37715c8a59dbc507dbfe"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:45:57.835Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:45:57.835Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f364f69d23a6835d0bc"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a375e5c8a59dbc507dbf6"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:46:14.795Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:46:14.795Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f444f69d23a6835d0c0"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a374c5c8a59dbc507dbee"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:46:28.834Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:46:28.834Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f4f4f69d23a6835d0c4"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a37385c8a59dbc507dbe6"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:46:39.784Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:46:39.784Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f5f4f69d23a6835d0c8"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a37135c8a59dbc507dbde"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:46:55.595Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:46:55.595Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f6a4f69d23a6835d0cc"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a23115c8a59dbc507db9d"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:47:06.701Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:47:06.701Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3f784f69d23a6835d0d0"
+  },
+  "branchId": {
+    "$oid": "679a3d6e4f69d23a6835d093"
+  },
+  "bookId": {
+    "$oid": "679a22445c8a59dbc507db8c"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:47:20.002Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:47:20.002Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fa24f69d23a6835d0d4"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a22445c8a59dbc507db8c"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:02.458Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:02.458Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fac4f69d23a6835d0d8"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a23115c8a59dbc507db9d"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:12.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:12.283Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fb54f69d23a6835d0dc"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a37135c8a59dbc507dbde"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:21.502Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:21.502Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fbe4f69d23a6835d0e0"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a37385c8a59dbc507dbe6"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:30.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:30.453Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fc64f69d23a6835d0e4"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a374c5c8a59dbc507dbee"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:38.986Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:38.986Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fcf4f69d23a6835d0e8"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a375e5c8a59dbc507dbf6"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:47.233Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:47.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679a3fd74f69d23a6835d0ec"
+  },
+  "branchId": {
+    "$oid": "679a3d764f69d23a6835d097"
+  },
+  "bookId": {
+    "$oid": "679a37715c8a59dbc507dbfe"
+  },
+  "totalCopies": 20,
+  "borrowableDays": 7,
+  "availableCopies": 20,
+  "createdAt": {
+    "$date": "2025-01-29T14:48:55.540Z"
+  },
+  "updatedAt": {
+    "$date": "2025-01-29T14:48:55.540Z"
   },
   "__v": 0
 }]

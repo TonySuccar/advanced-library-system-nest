@@ -1,58 +1,30 @@
 [{
   "_id": {
-    "$oid": "678d824faf354476f5f7044f"
+    "$oid": "679a458325ee27805d9e76b9"
   },
   "memberId": {
-    "$oid": "678bcc1f4d96c11688ae9e4f"
+    "$oid": "679a1992b66c3852178bb8e3"
   },
   "bookId": {
-    "$oid": "678d5f4ea04a01daa9f28d94"
+    "$oid": "679a23115c8a59dbc507db9d"
   },
-  "branchId": "678d0514980c7f6642a83ca7",
+  "branchId": "679a3d674f69d23a6835d08f",
   "borrowedAt": {
-    "$date": "2025-01-19T22:53:03.249Z"
+    "$date": "2025-01-29T15:13:07.182Z"
   },
   "returnBy": {
-    "$date": "2025-01-26T22:53:03.249Z"
+    "$date": "2025-02-05T15:13:07.182Z"
   },
+  "feedback": "Great book! Really enjoyed it.",
   "returnedAt": {
-    "$date": "2025-01-19T23:35:49.302Z"
+    "$date": "2025-01-29T15:28:05.106Z"
   },
   "isOverdue": false,
   "createdAt": {
-    "$date": "2025-01-19T22:53:03.255Z"
+    "$date": "2025-01-29T15:13:07.189Z"
   },
   "updatedAt": {
-    "$date": "2025-01-19T23:35:49.308Z"
-  },
-  "__v": 0,
-  "feedback": "Great book! Really enjoyed it."
-},
-{
-  "_id": {
-    "$oid": "678ebed39c72446515deacdb"
-  },
-  "memberId": {
-    "$oid": "678bcc1f4d96c11688ae9e4f"
-  },
-  "bookId": {
-    "$oid": "678e5e7137ef6c8e11a46e10"
-  },
-  "branchId": "678d0514980c7f6642a83ca7",
-  "borrowedAt": {
-    "$date": "2025-01-20T21:23:31.500Z"
-  },
-  "returnBy": {
-    "$date": "2025-01-27T21:23:31.500Z"
-  },
-  "feedback": null,
-  "returnedAt": null,
-  "isOverdue": false,
-  "createdAt": {
-    "$date": "2025-01-20T21:23:31.506Z"
-  },
-  "updatedAt": {
-    "$date": "2025-01-20T21:23:31.506Z"
+    "$date": "2025-01-29T15:28:05.107Z"
   },
   "__v": 0
 }]

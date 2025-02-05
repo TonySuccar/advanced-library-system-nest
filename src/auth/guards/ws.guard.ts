@@ -54,7 +54,7 @@ export class WebSocketAuthGuard implements CanActivate {
         process.env.JWT_SECRET || 'your-secret-key',
       ) as JwtPayload;
     } catch (error) {
-      throw new UnauthorizedException('Invalid authentication token.');
+      throw new UnauthorizedException('Invalid authentication token.', error);
     }
   }
 }

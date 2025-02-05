@@ -1,22 +1,22 @@
 [{
   "_id": {
-    "$oid": "678d9a22014e5ee134ef9970"
+    "$oid": "67a39aa2e32012636ad0d733"
   },
   "bookId": {
-    "$oid": "678d5f4ea04a01daa9f28d94"
+    "$oid": "679a37135c8a59dbc507dbde"
   },
   "memberId": {
-    "$oid": "678bcc1f4d96c11688ae9e4f"
+    "$oid": "679a1aa4b66c3852178bb8ff"
   },
   "review": "Amazing book! Highly recommend it.",
   "rating": 5,
   "likes": 0,
   "likedBy": [],
   "createdAt": {
-    "$date": "2025-01-20T00:34:42.584Z"
+    "$date": "2025-02-05T17:06:42.400Z"
   },
   "updatedAt": {
-    "$date": "2025-01-20T00:50:20.324Z"
+    "$date": "2025-02-05T17:06:42.400Z"
   },
-  "__v": 20
+  "__v": 0
 }]
