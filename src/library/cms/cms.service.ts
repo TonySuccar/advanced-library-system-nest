@@ -134,8 +134,8 @@ export class CMSService {
 
     const query = { status: 'pending' };
 
-    const pageNumber = Math.max(1, parseInt(page as any, 10) || 1);
-    const limitNumber = Math.max(1, parseInt(limit as any, 10) || 10);
+    const pageNumber = Math.max(1, Number(page) || 1);
+    const limitNumber = Math.max(1, Number(limit) || 10);
 
     const skip = (pageNumber - 1) * limitNumber;
 

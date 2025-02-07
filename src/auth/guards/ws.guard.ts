@@ -24,7 +24,7 @@ export class WebSocketAuthGuard implements CanActivate {
       client.data.user = user; // Attach user to client
       return true;
     } catch (error) {
-      console.error('❌ WebSocket Authentication Failed:', error.message);
+      console.error('WebSocket Authentication Failed:', error.message);
       client.emit('error', { message: 'Authentication failed.' });
       client.disconnect();
       return false;

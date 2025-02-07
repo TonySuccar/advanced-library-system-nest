@@ -20,6 +20,7 @@ import { ChatModule } from './library/chat/chat.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+
     ScheduleModule.forRoot(),
     JwtModule.register({
       global: true,

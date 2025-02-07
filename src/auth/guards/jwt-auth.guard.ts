@@ -1,18 +1,36 @@
 import {
   ExecutionContext,
   Injectable,
+  Logger,
   UnauthorizedException,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { Request } from 'express';
+import { JwtPayload } from '../../types/auth.types';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {
-  handleRequest(err: any, user: any, info: any, context: ExecutionContext) {
-    const request = context.switchToHttp().getRequest();
-    console.log('Authorization Header:', request.headers.authorization);
+  private static readonly logger = new Logger(JwtAuthGuard.name);
+
+  handleRequest<TUser = JwtPayload>(
+    err: Error | null,
+    user: TUser | null,
+    info: unknown,
+    context: ExecutionContext,
+  ): TUser {
+    const request = context.switchToHttp().getRequest<Request>();
+
+    JwtAuthGuard.logger.log(
+      `Authorization Header: ${request.headers.authorization}`,
+      'JwtAuthGuard',
+    );
 
     if (err || !user) {
-      console.error('JwtAuthGuard Error:', err || info);
+      JwtAuthGuard.logger.error(
+        'Authentication failed',
+        err || info,
+        'JwtAuthGuard',
+      );
       throw new UnauthorizedException('Invalid or missing token.');
     }
 
